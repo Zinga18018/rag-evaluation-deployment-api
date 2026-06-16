@@ -1,0 +1,9 @@
+{
+  "documents_indexed": 32,
+  "eval_questions": 20,
+  "retrieval_at_1": 0.95,
+  "retrieval_at_3": 1.0,
+  "citation_coverage": 1.0,
+  "avg_latency_ms": 0.13,
+  "p95_latency_ms": 0.16
+}

@@ -1,0 +1,102 @@
+[
+  {
+    "question_id": "q01",
+    "question": "How should experiments be tracked for reproducible machine learning?",
+    "expected_doc_id": "mlflow_tracking"
+  },
+  {
+    "question_id": "q02",
+    "question": "What should a Dockerized FastAPI deployment include?",
+    "expected_doc_id": "docker_fastapi"
+  },
+  {
+    "question_id": "q03",
+    "question": "Why should a RAG answer include citations?",
+    "expected_doc_id": "rag_citations"
+  },
+  {
+    "question_id": "q04",
+    "question": "How does vector search choose context passages?",
+    "expected_doc_id": "vector_search"
+  },
+  {
+    "question_id": "q05",
+    "question": "Which metric helps detect slow model API responses?",
+    "expected_doc_id": "latency_monitoring"
+  },
+  {
+    "question_id": "q06",
+    "question": "How can teams detect unreliable live feature distributions?",
+    "expected_doc_id": "data_drift"
+  },
+  {
+    "question_id": "q07",
+    "question": "Where should approved model versions and deployment stages be stored?",
+    "expected_doc_id": "model_registry"
+  },
+  {
+    "question_id": "q08",
+    "question": "What does batch inference validate before downstream use?",
+    "expected_doc_id": "batch_inference"
+  },
+  {
+    "question_id": "q09",
+    "question": "What is online inference for low latency predictions?",
+    "expected_doc_id": "online_inference"
+  },
+  {
+    "question_id": "q10",
+    "question": "Which rules catch bad model input features?",
+    "expected_doc_id": "feature_validation"
+  },
+  {
+    "question_id": "q11",
+    "question": "What does an A/B test readout compare?",
+    "expected_doc_id": "ab_testing"
+  },
+  {
+    "question_id": "q12",
+    "question": "How is cohort retention measured after 7 or 30 days?",
+    "expected_doc_id": "cohort_retention"
+  },
+  {
+    "question_id": "q13",
+    "question": "What schedules long-running GPU training jobs?",
+    "expected_doc_id": "slurm_training"
+  },
+  {
+    "question_id": "q14",
+    "question": "How does LoRA fine-tune a large language model efficiently?",
+    "expected_doc_id": "lora_adaptation"
+  },
+  {
+    "question_id": "q15",
+    "question": "Why is macro-F1 useful for imbalanced classification labels?",
+    "expected_doc_id": "macro_f1"
+  },
+  {
+    "question_id": "q16",
+    "question": "Which metric stays informative under label imbalance?",
+    "expected_doc_id": "mcc_metric"
+  },
+  {
+    "question_id": "q17",
+    "question": "What audits confident but wrong model predictions?",
+    "expected_doc_id": "high_confidence_error"
+  },
+  {
+    "question_id": "q18",
+    "question": "How do you defend a RAG system from prompt injection?",
+    "expected_doc_id": "prompt_injection"
+  },
+  {
+    "question_id": "q19",
+    "question": "What should be removed before text is logged or sent to a model?",
+    "expected_doc_id": "pii_redaction"
+  },
+  {
+    "question_id": "q20",
+    "question": "What does Retrieval@K measure in RAG evaluation?",
+    "expected_doc_id": "retrieval_at_k"
+  }
+]
