@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RAG Evaluation and Deployment API</title>
+  <style>
+    :root { color-scheme: light; --ink: #17202a; --muted: #5b6673; --line: #d8dee6; --soft: #f6f8fb; --accent: #265cff; }
+    * { box-sizing: border-box; }
+    body { margin: 0; font: 16px/1.45 system-ui, -apple-system, Segoe UI, sans-serif; color: var(--ink); background: white; }
+    main { max-width: 980px; margin: 0 auto; padding: 42px 22px 56px; }
+    header { border-bottom: 1px solid var(--line); padding-bottom: 22px; margin-bottom: 26px; }
+    h1 { margin: 0 0 8px; font-size: clamp(30px, 5vw, 46px); line-height: 1.05; letter-spacing: 0; }
+    h2 { font-size: 18px; margin: 28px 0 12px; }
+    p { margin: 0 0 12px; color: var(--muted); max-width: 760px; }
+    a { color: var(--accent); text-decoration: none; font-weight: 650; }
+    .links { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 16px; }
+    .button { border: 1px solid var(--line); border-radius: 6px; padding: 8px 12px; background: var(--soft); color: var(--ink); }
+    .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 20px 0; }
+    .metric, .panel { border: 1px solid var(--line); border-radius: 8px; padding: 14px; background: #fff; }
+    .metric strong { display: block; font-size: 25px; }
+    .metric span { color: var(--muted); font-size: 13px; }
+    .panel { background: var(--soft); }
+    label { display: block; font-weight: 700; margin-bottom: 8px; }
+    input { width: 100%; padding: 11px; border: 1px solid var(--line); border-radius: 6px; font: inherit; }
+    .result { margin-top: 14px; padding: 14px; border-left: 4px solid var(--accent); background: white; }
+    .source { font-size: 13px; color: var(--muted); margin-top: 8px; }
+    code { background: #eef2f8; padding: 2px 5px; border-radius: 4px; }
+    @media (max-width: 760px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>RAG Evaluation and Deployment API</h1>
+    <p>A FastAPI project for source-grounded retrieval, cited answers, reproducible evaluation, and deployment-ready packaging.</p>
+    <div class="links">
+      <a class="button" href="https://github.com/Zinga18018/rag-evaluation-deployment-api">GitHub Repository</a>
+    </div>
+  </header>
+
+  <section class="grid" aria-label="verified metrics">
+    <div class="metric"><strong>32</strong><span>documents indexed</span></div>
+    <div class="metric"><strong>20</strong><span>evaluation questions</span></div>
+    <div class="metric"><strong>0.95</strong><span>Retrieval at 1</span></div>
+    <div class="metric"><strong>1.00</strong><span>Retrieval at 3 / citation coverage</span></div>
+  </section>
+
+  <section class="panel">
+    <label for="question">Try a local-style retrieval query</label>
+    <input id="question" value="How does LoRA fine-tune a large language model efficiently?">
+    <div id="answer" class="result"></div>
+  </section>
+
+  <h2>What the backend includes</h2>
+  <p><code>/search</code>, <code>/answer</code>, <code>/metrics</code>, and <code>/health</code> endpoints, a Dockerfile, Vercel/Render config, and pytest checks for API health, ranking, and cited answer responses.</p>
+</main>
+<script>
+  const docs = [
+    { id: "lora_adaptation", title: "LoRA Adapter Fine-Tuning", text: "LoRA fine-tuning trains low-rank adapter weights for large language models while keeping most base model parameters frozen." },
+    { id: "retrieval_at_k", title: "Retrieval at K Metric", text: "Retrieval at K measures whether the expected source document appears within the top K retrieved documents for a question." },
+    { id: "docker_fastapi", title: "Dockerized FastAPI Deployment", text: "Docker packages a FastAPI model service with pinned dependencies, a health check, and a stable uvicorn startup command." }
+  ];
+  function render() {
+    const q = document.getElementById("question").value.toLowerCase();
+    const scored = docs.map(d => ({...d, score: d.text.toLowerCase().split(" ").filter(w => q.includes(w.replace(/[^a-z0-9]/g, ""))).length})).sort((a,b) => b.score - a.score);
+    const top = scored[0];
+    document.getElementById("answer").innerHTML = `<strong>${top.title}</strong><br>${top.text}<div class="source">source: ${top.id}</div>`;
+  }
+  document.getElementById("question").addEventListener("input", render);
+  render();
+</script>
+</body>
+</html>
+
