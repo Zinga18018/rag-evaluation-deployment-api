@@ -1,5 +1,7 @@
 # RAG Evaluation and Deployment API
 
+[See the workflow flowchart and code walkthrough](WORKFLOW.md)
+
 Deployable FastAPI project for source-grounded retrieval, citation-aware answers, and reproducible RAG evaluation.
 
 This first version uses a pure-Python TF-IDF vector retriever so the API can run locally and deploy without model downloads, GPU access, or paid API keys. The retrieval interface is intentionally separated from the API layer so dense embedding backends can be added later.
