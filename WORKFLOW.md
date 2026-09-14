@@ -1,6 +1,6 @@
 # Retrieval Evaluation API: workflow
 
-Expose a small document index through an API and measure retrieval behavior with a fixed local evaluation set.
+Expose a small document index through an API and evaluate ranking, evidence selection, and abstention as separate behaviors.
 
 **Relevant roles:** AI engineering foundations.
 
@@ -8,25 +8,35 @@ Expose a small document index through an API and measure retrieval behavior with
 
 ```mermaid
 flowchart TD
-A["Seed document corpus"] --> B["Build normalized TF-IDF index at startup"]
-    C["API query"] --> D["Rank documents by similarity"]
+    A["Authored document corpus"] --> B["Build normalized TF-IDF index"]
+    C["API query"] --> D["Rank only positive-score documents"]
     B --> D
-    D --> E["Choose matching sentence snippets"]
-    E --> F["Return extractive answer and sources"]
-    G["Fixed evaluation questions"] --> D
-    F --> H["Retrieval metrics, source presence and local latency"]
+    D --> E["Choose sentence snippets"]
+    E --> F{"Pass lexical evidence policy?"}
+    F -->|Yes| G["Return used snippets with source markers"]
+    F -->|No| H["Explicit abstention and reason"]
+    D --> I["Expose full ranking as retrieved_sources"]
+    J["52 development cases with provisional labels"] --> C
+    G --> K["Score source relevance and answerability"]
+    H --> K
+    I --> L["Score retrieval independently"]
+    K --> M["Save counts, failures, provenance and hashes"]
+    L --> M
 ```
 
 ## Explain it in an interview
 
-“I built the smallest retrieval service that I could evaluate end to end. I separate ranking quality from answer correctness and avoid calling a nonempty source list a grounded answer.”
+“I separate finding a related document from having evidence to answer a question. A real citation can still be irrelevant. I test questions with no overlap and questions that mention the right topic but ask for facts the corpus never provides. The evaluation preserves false answers and abstentions with their exact denominators.”
 
-## What this diagram does and does not establish
+## What this diagram establishes
 
-Answers are assembled from snippets; this is not an LLM generation pipeline. Citation coverage checks source presence, not factual support. The small fixed corpus and local latency measurements do not establish real-world RAG quality or end-to-end hosted-model latency.
+Answers are copied from snippets; no LLM generation or semantic-support checker is present. Source IDs and quote provenance are validated separately from provisional source relevance and answerability labels. The authored development set is pending human review and is not a locked or real-world benchmark. Local latency does not establish hosted-model latency.
 
-## Follow the code
+## Follow the code and evidence
 
-- [API routes and startup](rag_api/app.py)
-- [TF-IDF and extractive answers](rag_api/retriever.py)
-- [Evaluation definitions](rag_api/evaluation.py)
+- [API routes and response compatibility](rag_api/app.py)
+- [TF-IDF, evidence checks and extractive answers](rag_api/retriever.py)
+- [Evaluation definitions and denominators](rag_api/evaluation.py)
+- [Challenge fixture generator and provenance](scripts/build_challenge.py)
+- [Generated development report](outputs/EVALUATION_REPORT.md)
+- [Retained case failures](outputs/evaluation_failures.json)

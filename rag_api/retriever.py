@@ -3,7 +3,7 @@ from __future__ import annotations
 import math
 import re
 import time
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from typing import Iterable
 
 from rag_api.corpus import Document
@@ -30,6 +30,26 @@ class AnswerResult:
     answer: str
     sources: list[SearchResult]
     latency_ms: float
+    status: str = "answered"
+    abstention_reason: str | None = None
+    retrieved_sources: list[SearchResult] = field(default_factory=list)
+
+
+@dataclass(frozen=True)
+class EvidencePolicy:
+    """Lexical screening only; these thresholds are not a semantic verifier."""
+    min_score: float = 0.10
+    min_query_term_coverage: float = 0.30
+    min_shared_terms: int = 2
+    max_cited_sources: int = 2
+
+    def __post_init__(self) -> None:
+        if not math.isfinite(self.min_score) or not 0 <= self.min_score <= 1:
+            raise ValueError("min_score must be finite and in [0, 1]")
+        if not math.isfinite(self.min_query_term_coverage) or not 0 <= self.min_query_term_coverage <= 1:
+            raise ValueError("min_query_term_coverage must be finite and in [0, 1]")
+        if self.min_shared_terms < 1 or self.max_cited_sources < 1:
+            raise ValueError("shared-term and cited-source limits must be positive")
 
 
 def tokenize(text: str) -> list[str]:
@@ -37,8 +57,11 @@ def tokenize(text: str) -> list[str]:
 
 
 class TfidfRagIndex:
-    def __init__(self, documents: Iterable[Document]) -> None:
+    def __init__(self, documents: Iterable[Document], evidence_policy: EvidencePolicy | None = None) -> None:
         self.documents = list(documents)
+        if len({doc.doc_id for doc in self.documents}) != len(self.documents):
+            raise ValueError("document IDs must be unique")
+        self.evidence_policy = evidence_policy or EvidencePolicy()
         self.doc_vectors: dict[str, dict[str, float]] = {}
         self.idf: dict[str, float] = {}
         self._build()
@@ -81,10 +104,14 @@ class TfidfRagIndex:
         return sum(value * right.get(term, 0.0) for term, value in left.items())
 
     def search(self, query: str, top_k: int = 3) -> list[SearchResult]:
+        if not isinstance(top_k, int) or isinstance(top_k, bool) or top_k < 1:
+            raise ValueError("top_k must be a positive integer")
         query_vector = self._normalize(self._tfidf(tokenize(query)))
         scored: list[tuple[float, Document]] = []
         for doc in self.documents:
-            scored.append((self._dot(query_vector, self.doc_vectors[doc.doc_id]), doc))
+            score = self._dot(query_vector, self.doc_vectors[doc.doc_id])
+            if score > 0:
+                scored.append((score, doc))
 
         results: list[SearchResult] = []
         for score, doc in sorted(scored, key=lambda item: item[0], reverse=True)[:top_k]:
@@ -92,7 +119,7 @@ class TfidfRagIndex:
                 SearchResult(
                     doc_id=doc.doc_id,
                     title=doc.title,
-                    score=round(score, 4),
+                    score=float(score),
                     snippet=self._best_snippet(query, doc.text),
                 )
             )
@@ -100,16 +127,28 @@ class TfidfRagIndex:
 
     def answer(self, query: str, top_k: int = 3) -> AnswerResult:
         start = time.perf_counter()
-        sources = self.search(query, top_k=top_k)
-        answer_parts = [source.snippet for source in sources if source.snippet and source.score >= 0.05]
-        if not answer_parts and sources:
-            answer_parts = [sources[0].snippet]
-        if answer_parts:
-            answer = " ".join(answer_parts[:2])
+        retrieved = self.search(query, top_k=top_k)
+        query_terms = set(tokenize(query))
+        policy = self.evidence_policy
+        sources = []
+        for source in retrieved:
+            shared = len(query_terms.intersection(tokenize(source.snippet)))
+            coverage = shared / len(query_terms) if query_terms else 0.0
+            if (source.snippet.strip() and source.score >= policy.min_score
+                    and coverage >= policy.min_query_term_coverage
+                    and shared >= min(policy.min_shared_terms, len(query_terms))):
+                sources.append(source)
+        sources = sources[:policy.max_cited_sources]
+        if sources:
+            answer = " ".join(f"{source.snippet} [{source.doc_id}]" for source in sources)
+            status, reason = "answered", None
         else:
-            answer = "No strong source match found in the indexed corpus."
+            answer = "I cannot answer from the indexed corpus: no passage passed the lexical evidence checks."
+            status = "abstained"
+            reason = "no_matching_terms" if not retrieved else "weak_lexical_evidence"
         latency_ms = (time.perf_counter() - start) * 1000
-        return AnswerResult(answer=answer, sources=sources, latency_ms=round(latency_ms, 3))
+        return AnswerResult(answer=answer, sources=sources, latency_ms=round(latency_ms, 3),
+                            status=status, abstention_reason=reason, retrieved_sources=retrieved)
 
     @staticmethod
     def _best_snippet(query: str, text: str) -> str:

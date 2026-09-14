@@ -18,8 +18,8 @@ index = TfidfRagIndex(documents)
 
 app = FastAPI(
     title="RAG Evaluation and Deployment API",
-    version="1.0.0",
-    description="Source-grounded retrieval API with evaluation metrics and deployable FastAPI endpoints.",
+    version="1.1.0",
+    description="TF-IDF retrieval and traceable extractive answers with explicit abstention and development evaluation.",
 )
 
 
@@ -47,6 +47,9 @@ def answer(request: QueryRequest) -> dict:
         "answer": result.answer,
         "latency_ms": result.latency_ms,
         "sources": [source.__dict__ for source in result.sources],
+        "status": result.status,
+        "abstention_reason": result.abstention_reason,
+        "retrieved_sources": [source.__dict__ for source in result.retrieved_sources],
     }
 
 

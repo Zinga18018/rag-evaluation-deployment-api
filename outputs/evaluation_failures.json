@@ -1,0 +1,789 @@
+[
+  {
+    "question_id": "q02",
+    "question": "What should a Dockerized FastAPI deployment include?",
+    "category": "original_answerable_fixture",
+    "expected_answerable": true,
+    "relevant_doc_ids": [
+      "docker_fastapi"
+    ],
+    "label_status": "pending_human_review",
+    "provenance": "Inherited authored development fixture; reference label not independently reviewed.",
+    "expected_rationale": null,
+    "status": "answered",
+    "abstention_reason": null,
+    "answer": "# Dockerized FastAPI Deployment  Docker packages a FastAPI model service with pinned dependencies, a health check, and a stable uvicorn startup command for cloud deployment. [docker_fastapi] # Evaluation Dataset Design  Evaluation datasets should include expected answers, expected source documents, negative cases, and stable IDs for repeatable scoring. [evaluation_dataset]",
+    "retrieved_sources": [
+      {
+        "doc_id": "docker_fastapi",
+        "title": "Dockerized FastAPI Deployment",
+        "score": 0.6499185588099889,
+        "snippet": "# Dockerized FastAPI Deployment  Docker packages a FastAPI model service with pinned dependencies, a health check, and a stable uvicorn startup command for cloud deployment."
+      },
+      {
+        "doc_id": "cloud_runbook",
+        "title": "Cloud Deployment Runbook",
+        "score": 0.15977156297677744,
+        "snippet": "# Cloud Deployment Runbook  A deployment runbook documents build commands, environment variables, rollback steps, and health checks for cloud services."
+      },
+      {
+        "doc_id": "evaluation_dataset",
+        "title": "Evaluation Dataset Design",
+        "score": 0.13190637068814787,
+        "snippet": "# Evaluation Dataset Design  Evaluation datasets should include expected answers, expected source documents, negative cases, and stable IDs for repeatable scoring."
+      }
+    ],
+    "cited_sources": [
+      {
+        "doc_id": "docker_fastapi",
+        "title": "Dockerized FastAPI Deployment",
+        "score": 0.6499185588099889,
+        "snippet": "# Dockerized FastAPI Deployment  Docker packages a FastAPI model service with pinned dependencies, a health check, and a stable uvicorn startup command for cloud deployment."
+      },
+      {
+        "doc_id": "evaluation_dataset",
+        "title": "Evaluation Dataset Design",
+        "score": 0.13190637068814787,
+        "snippet": "# Evaluation Dataset Design  Evaluation datasets should include expected answers, expected source documents, negative cases, and stable IDs for repeatable scoring."
+      }
+    ],
+    "retrieval_top1_hit": true,
+    "retrieval_topk_hit": true,
+    "failure_reasons": [
+      "cited_source_not_in_provisional_relevance_labels"
+    ],
+    "semantic_support_verified": false
+  },
+  {
+    "question_id": "q03",
+    "question": "Why should a RAG answer include citations?",
+    "category": "original_answerable_fixture",
+    "expected_answerable": true,
+    "relevant_doc_ids": [
+      "rag_citations"
+    ],
+    "label_status": "pending_human_review",
+    "provenance": "Inherited authored development fixture; reference label not independently reviewed.",
+    "expected_rationale": null,
+    "status": "answered",
+    "abstention_reason": null,
+    "answer": "# RAG Citation Policy  Retrieval augmented generation should return source citations, document identifiers, and quoted evidence so users can audit generated answers. [rag_citations] # Evaluation Dataset Design  Evaluation datasets should include expected answers, expected source documents, negative cases, and stable IDs for repeatable scoring. [evaluation_dataset]",
+    "retrieved_sources": [
+      {
+        "doc_id": "rag_citations",
+        "title": "RAG Citation Policy",
+        "score": 0.31991553380108323,
+        "snippet": "# RAG Citation Policy  Retrieval augmented generation should return source citations, document identifiers, and quoted evidence so users can audit generated answers."
+      },
+      {
+        "doc_id": "faithfulness_eval",
+        "title": "Answer Faithfulness Evaluation",
+        "score": 0.17203369390931908,
+        "snippet": "# Answer Faithfulness Evaluation  Faithfulness evaluation checks whether generated answers are supported by retrieved evidence rather than unsupported model guesses."
+      },
+      {
+        "doc_id": "evaluation_dataset",
+        "title": "Evaluation Dataset Design",
+        "score": 0.131604456580867,
+        "snippet": "# Evaluation Dataset Design  Evaluation datasets should include expected answers, expected source documents, negative cases, and stable IDs for repeatable scoring."
+      }
+    ],
+    "cited_sources": [
+      {
+        "doc_id": "rag_citations",
+        "title": "RAG Citation Policy",
+        "score": 0.31991553380108323,
+        "snippet": "# RAG Citation Policy  Retrieval augmented generation should return source citations, document identifiers, and quoted evidence so users can audit generated answers."
+      },
+      {
+        "doc_id": "evaluation_dataset",
+        "title": "Evaluation Dataset Design",
+        "score": 0.131604456580867,
+        "snippet": "# Evaluation Dataset Design  Evaluation datasets should include expected answers, expected source documents, negative cases, and stable IDs for repeatable scoring."
+      }
+    ],
+    "retrieval_top1_hit": true,
+    "retrieval_topk_hit": true,
+    "failure_reasons": [
+      "cited_source_not_in_provisional_relevance_labels"
+    ],
+    "semantic_support_verified": false
+  },
+  {
+    "question_id": "q04",
+    "question": "How does vector search choose context passages?",
+    "category": "original_answerable_fixture",
+    "expected_answerable": true,
+    "relevant_doc_ids": [
+      "vector_search"
+    ],
+    "label_status": "pending_human_review",
+    "provenance": "Inherited authored development fixture; reference label not independently reviewed.",
+    "expected_rationale": null,
+    "status": "answered",
+    "abstention_reason": null,
+    "answer": "# Vector Search Retrieval  Vector search ranks documents by embedding or sparse-vector similarity and returns top-k context passages for answer generation. [vector_search] # Document Chunking  Document chunking splits long files into retrievable passages while preserving enough context for source-grounded answers. [document_chunking]",
+    "retrieved_sources": [
+      {
+        "doc_id": "vector_search",
+        "title": "Vector Search Retrieval",
+        "score": 0.7363368233247166,
+        "snippet": "# Vector Search Retrieval  Vector search ranks documents by embedding or sparse-vector similarity and returns top-k context passages for answer generation."
+      },
+      {
+        "doc_id": "document_chunking",
+        "title": "Document Chunking",
+        "score": 0.13708030915137104,
+        "snippet": "# Document Chunking  Document chunking splits long files into retrievable passages while preserving enough context for source-grounded answers."
+      }
+    ],
+    "cited_sources": [
+      {
+        "doc_id": "vector_search",
+        "title": "Vector Search Retrieval",
+        "score": 0.7363368233247166,
+        "snippet": "# Vector Search Retrieval  Vector search ranks documents by embedding or sparse-vector similarity and returns top-k context passages for answer generation."
+      },
+      {
+        "doc_id": "document_chunking",
+        "title": "Document Chunking",
+        "score": 0.13708030915137104,
+        "snippet": "# Document Chunking  Document chunking splits long files into retrievable passages while preserving enough context for source-grounded answers."
+      }
+    ],
+    "retrieval_top1_hit": true,
+    "retrieval_topk_hit": true,
+    "failure_reasons": [
+      "cited_source_not_in_provisional_relevance_labels"
+    ],
+    "semantic_support_verified": false
+  },
+  {
+    "question_id": "q05",
+    "question": "Which metric helps detect slow model API responses?",
+    "category": "original_answerable_fixture",
+    "expected_answerable": true,
+    "relevant_doc_ids": [
+      "latency_monitoring"
+    ],
+    "label_status": "pending_human_review",
+    "provenance": "Inherited authored development fixture; reference label not independently reviewed.",
+    "expected_rationale": null,
+    "status": "abstained",
+    "abstention_reason": "weak_lexical_evidence",
+    "answer": "I cannot answer from the indexed corpus: no passage passed the lexical evidence checks.",
+    "retrieved_sources": [
+      {
+        "doc_id": "retrieval_at_k",
+        "title": "Retrieval@K Metric",
+        "score": 0.369419720738191,
+        "snippet": "Operational note: Retrieval@K Metric supports reliable ML engineering workflows by making model behavior easier to test, deploy, monitor, and explain."
+      },
+      {
+        "doc_id": "online_inference",
+        "title": "Online Inference API",
+        "score": 0.1759672798856172,
+        "snippet": "Operational note: Online Inference API supports reliable ML engineering workflows by making model behavior easier to test, deploy, monitor, and explain."
+      },
+      {
+        "doc_id": "latency_monitoring",
+        "title": "API Latency Monitoring",
+        "score": 0.17258702937908804,
+        "snippet": "# API Latency Monitoring  Latency monitoring tracks average, p95, and p99 response time so deployed model APIs can be debugged before users notice slowdowns."
+      }
+    ],
+    "cited_sources": [],
+    "retrieval_top1_hit": false,
+    "retrieval_topk_hit": true,
+    "failure_reasons": [
+      "abstained_on_answerable_case"
+    ],
+    "semantic_support_verified": false
+  },
+  {
+    "question_id": "q09",
+    "question": "What is online inference for low latency predictions?",
+    "category": "original_answerable_fixture",
+    "expected_answerable": true,
+    "relevant_doc_ids": [
+      "online_inference"
+    ],
+    "label_status": "pending_human_review",
+    "provenance": "Inherited authored development fixture; reference label not independently reviewed.",
+    "expected_rationale": null,
+    "status": "answered",
+    "abstention_reason": null,
+    "answer": "# Online Inference API  Online inference serves predictions through low-latency endpoints with request validation, error handling, and structured logs. [online_inference] # Batch Inference Pipeline  Batch inference scores scheduled datasets, writes predictions to storage, and validates row counts before downstream use. [batch_inference]",
+    "retrieved_sources": [
+      {
+        "doc_id": "online_inference",
+        "title": "Online Inference API",
+        "score": 0.6423271105191467,
+        "snippet": "# Online Inference API  Online inference serves predictions through low-latency endpoints with request validation, error handling, and structured logs."
+      },
+      {
+        "doc_id": "batch_inference",
+        "title": "Batch Inference Pipeline",
+        "score": 0.2433792513854758,
+        "snippet": "# Batch Inference Pipeline  Batch inference scores scheduled datasets, writes predictions to storage, and validates row counts before downstream use."
+      },
+      {
+        "doc_id": "latency_monitoring",
+        "title": "API Latency Monitoring",
+        "score": 0.20895480921370269,
+        "snippet": "# API Latency Monitoring  Latency monitoring tracks average, p95, and p99 response time so deployed model APIs can be debugged before users notice slowdowns."
+      }
+    ],
+    "cited_sources": [
+      {
+        "doc_id": "online_inference",
+        "title": "Online Inference API",
+        "score": 0.6423271105191467,
+        "snippet": "# Online Inference API  Online inference serves predictions through low-latency endpoints with request validation, error handling, and structured logs."
+      },
+      {
+        "doc_id": "batch_inference",
+        "title": "Batch Inference Pipeline",
+        "score": 0.2433792513854758,
+        "snippet": "# Batch Inference Pipeline  Batch inference scores scheduled datasets, writes predictions to storage, and validates row counts before downstream use."
+      }
+    ],
+    "retrieval_top1_hit": true,
+    "retrieval_topk_hit": true,
+    "failure_reasons": [
+      "cited_source_not_in_provisional_relevance_labels"
+    ],
+    "semantic_support_verified": false
+  },
+  {
+    "question_id": "q20",
+    "question": "What does Retrieval@K measure in RAG evaluation?",
+    "category": "original_answerable_fixture",
+    "expected_answerable": true,
+    "relevant_doc_ids": [
+      "retrieval_at_k"
+    ],
+    "label_status": "pending_human_review",
+    "provenance": "Inherited authored development fixture; reference label not independently reviewed.",
+    "expected_rationale": null,
+    "status": "answered",
+    "abstention_reason": null,
+    "answer": "Retrieval at K is the main metric for checking if a RAG retriever found the right evidence. [retrieval_at_k] # RAG Citation Policy  Retrieval augmented generation should return source citations, document identifiers, and quoted evidence so users can audit generated answers. [rag_citations]",
+    "retrieved_sources": [
+      {
+        "doc_id": "retrieval_at_k",
+        "title": "Retrieval@K Metric",
+        "score": 0.34975677422434104,
+        "snippet": "Retrieval at K is the main metric for checking if a RAG retriever found the right evidence."
+      },
+      {
+        "doc_id": "rag_citations",
+        "title": "RAG Citation Policy",
+        "score": 0.3303006960718269,
+        "snippet": "# RAG Citation Policy  Retrieval augmented generation should return source citations, document identifiers, and quoted evidence so users can audit generated answers."
+      },
+      {
+        "doc_id": "evaluation_dataset",
+        "title": "Evaluation Dataset Design",
+        "score": 0.29220148612849123,
+        "snippet": "# Evaluation Dataset Design  Evaluation datasets should include expected answers, expected source documents, negative cases, and stable IDs for repeatable scoring."
+      }
+    ],
+    "cited_sources": [
+      {
+        "doc_id": "retrieval_at_k",
+        "title": "Retrieval@K Metric",
+        "score": 0.34975677422434104,
+        "snippet": "Retrieval at K is the main metric for checking if a RAG retriever found the right evidence."
+      },
+      {
+        "doc_id": "rag_citations",
+        "title": "RAG Citation Policy",
+        "score": 0.3303006960718269,
+        "snippet": "# RAG Citation Policy  Retrieval augmented generation should return source citations, document identifiers, and quoted evidence so users can audit generated answers."
+      }
+    ],
+    "retrieval_top1_hit": true,
+    "retrieval_topk_hit": true,
+    "failure_reasons": [
+      "cited_source_not_in_provisional_relevance_labels"
+    ],
+    "semantic_support_verified": false
+  },
+  {
+    "question_id": "dev-a04",
+    "question": "Which debugging fields are captured in structured logs?",
+    "category": "additional_answerable",
+    "expected_answerable": true,
+    "relevant_doc_ids": [
+      "structured_logging"
+    ],
+    "label_status": "pending_human_review",
+    "provenance": "Authored development fixture based on the included synthetic corpus; not human-reviewed, not locked evaluation, and not a model-generated reference answer.",
+    "expected_rationale": "The named corpus document states the requested definition or mechanism.",
+    "status": "answered",
+    "abstention_reason": null,
+    "answer": "# Structured Logging  Structured logs capture request IDs, latency, endpoint names, and error types for debugging deployed ML services. [structured_logging] # Online Inference API  Online inference serves predictions through low-latency endpoints with request validation, error handling, and structured logs. [online_inference]",
+    "retrieved_sources": [
+      {
+        "doc_id": "structured_logging",
+        "title": "Structured Logging",
+        "score": 0.5405208193635174,
+        "snippet": "# Structured Logging  Structured logs capture request IDs, latency, endpoint names, and error types for debugging deployed ML services."
+      },
+      {
+        "doc_id": "online_inference",
+        "title": "Online Inference API",
+        "score": 0.14868291418751434,
+        "snippet": "# Online Inference API  Online inference serves predictions through low-latency endpoints with request validation, error handling, and structured logs."
+      },
+      {
+        "doc_id": "slurm_training",
+        "title": "SLURM Training Jobs",
+        "score": 0.05935576604338919,
+        "snippet": "# SLURM Training Jobs  SLURM schedules research-compute jobs, allocates CPU or GPU resources, and captures logs for long-running model training."
+      }
+    ],
+    "cited_sources": [
+      {
+        "doc_id": "structured_logging",
+        "title": "Structured Logging",
+        "score": 0.5405208193635174,
+        "snippet": "# Structured Logging  Structured logs capture request IDs, latency, endpoint names, and error types for debugging deployed ML services."
+      },
+      {
+        "doc_id": "online_inference",
+        "title": "Online Inference API",
+        "score": 0.14868291418751434,
+        "snippet": "# Online Inference API  Online inference serves predictions through low-latency endpoints with request validation, error handling, and structured logs."
+      }
+    ],
+    "retrieval_top1_hit": true,
+    "retrieval_topk_hit": true,
+    "failure_reasons": [
+      "cited_source_not_in_provisional_relevance_labels"
+    ],
+    "semantic_support_verified": false
+  },
+  {
+    "question_id": "dev-a08",
+    "question": "What belongs in a cloud deployment runbook?",
+    "category": "additional_answerable",
+    "expected_answerable": true,
+    "relevant_doc_ids": [
+      "cloud_runbook"
+    ],
+    "label_status": "pending_human_review",
+    "provenance": "Authored development fixture based on the included synthetic corpus; not human-reviewed, not locked evaluation, and not a model-generated reference answer.",
+    "expected_rationale": "The named corpus document states the requested definition or mechanism.",
+    "status": "answered",
+    "abstention_reason": null,
+    "answer": "# Cloud Deployment Runbook  A deployment runbook documents build commands, environment variables, rollback steps, and health checks for cloud services. [cloud_runbook] # Dockerized FastAPI Deployment  Docker packages a FastAPI model service with pinned dependencies, a health check, and a stable uvicorn startup command for cloud deployment. [docker_fastapi]",
+    "retrieved_sources": [
+      {
+        "doc_id": "cloud_runbook",
+        "title": "Cloud Deployment Runbook",
+        "score": 0.8936148220897616,
+        "snippet": "# Cloud Deployment Runbook  A deployment runbook documents build commands, environment variables, rollback steps, and health checks for cloud services."
+      },
+      {
+        "doc_id": "docker_fastapi",
+        "title": "Dockerized FastAPI Deployment",
+        "score": 0.2941805357190735,
+        "snippet": "# Dockerized FastAPI Deployment  Docker packages a FastAPI model service with pinned dependencies, a health check, and a stable uvicorn startup command for cloud deployment."
+      },
+      {
+        "doc_id": "model_registry",
+        "title": "Model Registry Governance",
+        "score": 0.06123013333693557,
+        "snippet": "# Model Registry Governance  A model registry stores approved model versions, signatures, metrics, owners, and deployment stages for controlled releases."
+      }
+    ],
+    "cited_sources": [
+      {
+        "doc_id": "cloud_runbook",
+        "title": "Cloud Deployment Runbook",
+        "score": 0.8936148220897616,
+        "snippet": "# Cloud Deployment Runbook  A deployment runbook documents build commands, environment variables, rollback steps, and health checks for cloud services."
+      },
+      {
+        "doc_id": "docker_fastapi",
+        "title": "Dockerized FastAPI Deployment",
+        "score": 0.2941805357190735,
+        "snippet": "# Dockerized FastAPI Deployment  Docker packages a FastAPI model service with pinned dependencies, a health check, and a stable uvicorn startup command for cloud deployment."
+      }
+    ],
+    "retrieval_top1_hit": true,
+    "retrieval_topk_hit": true,
+    "failure_reasons": [
+      "cited_source_not_in_provisional_relevance_labels"
+    ],
+    "semantic_support_verified": false
+  },
+  {
+    "question_id": "dev-overlap01",
+    "question": "What exact p95 latency did this model API achieve yesterday?",
+    "category": "overlapping_vocabulary_unanswerable",
+    "expected_answerable": false,
+    "relevant_doc_ids": [],
+    "label_status": "pending_human_review",
+    "provenance": "Authored development fixture based on the included synthetic corpus; not human-reviewed, not locked evaluation, and not a model-generated reference answer.",
+    "expected_rationale": "The latency note defines measurements but provides no dated observations.",
+    "status": "answered",
+    "abstention_reason": null,
+    "answer": "# API Latency Monitoring  Latency monitoring tracks average, p95, and p99 response time so deployed model APIs can be debugged before users notice slowdowns. [latency_monitoring]",
+    "retrieved_sources": [
+      {
+        "doc_id": "latency_monitoring",
+        "title": "API Latency Monitoring",
+        "score": 0.5217211102419459,
+        "snippet": "# API Latency Monitoring  Latency monitoring tracks average, p95, and p99 response time so deployed model APIs can be debugged before users notice slowdowns."
+      },
+      {
+        "doc_id": "online_inference",
+        "title": "Online Inference API",
+        "score": 0.19201926906146605,
+        "snippet": "Operational note: Online Inference API supports reliable ML engineering workflows by making model behavior easier to test, deploy, monitor, and explain."
+      },
+      {
+        "doc_id": "rate_limiting",
+        "title": "API Rate Limiting",
+        "score": 0.17682824413712112,
+        "snippet": "Operational note: API Rate Limiting supports reliable ML engineering workflows by making model behavior easier to test, deploy, monitor, and explain."
+      }
+    ],
+    "cited_sources": [
+      {
+        "doc_id": "latency_monitoring",
+        "title": "API Latency Monitoring",
+        "score": 0.5217211102419459,
+        "snippet": "# API Latency Monitoring  Latency monitoring tracks average, p95, and p99 response time so deployed model APIs can be debugged before users notice slowdowns."
+      }
+    ],
+    "retrieval_top1_hit": null,
+    "retrieval_topk_hit": null,
+    "failure_reasons": [
+      "answered_unanswerable_case",
+      "cited_source_not_in_provisional_relevance_labels"
+    ],
+    "semantic_support_verified": false
+  },
+  {
+    "question_id": "dev-overlap02",
+    "question": "What dollar cost did SLURM GPU training incur last month?",
+    "category": "overlapping_vocabulary_unanswerable",
+    "expected_answerable": false,
+    "relevant_doc_ids": [],
+    "label_status": "pending_human_review",
+    "provenance": "Authored development fixture based on the included synthetic corpus; not human-reviewed, not locked evaluation, and not a model-generated reference answer.",
+    "expected_rationale": "The SLURM note explains scheduling but contains no expenditure records.",
+    "status": "answered",
+    "abstention_reason": null,
+    "answer": "# SLURM Training Jobs  SLURM schedules research-compute jobs, allocates CPU or GPU resources, and captures logs for long-running model training. [slurm_training]",
+    "retrieved_sources": [
+      {
+        "doc_id": "slurm_training",
+        "title": "SLURM Training Jobs",
+        "score": 0.5860393049073928,
+        "snippet": "# SLURM Training Jobs  SLURM schedules research-compute jobs, allocates CPU or GPU resources, and captures logs for long-running model training."
+      },
+      {
+        "doc_id": "cache_layer",
+        "title": "Caching Layer",
+        "score": 0.08537814701819828,
+        "snippet": "# Caching Layer  Caching repeated retrieval results reduces latency and cost for common questions in high-traffic AI applications."
+      },
+      {
+        "doc_id": "data_drift",
+        "title": "Data Drift Detection",
+        "score": 0.05695595556149179,
+        "snippet": "# Data Drift Detection  Data drift checks compare live feature distributions with training data distributions to detect when a model may become unreliable."
+      }
+    ],
+    "cited_sources": [
+      {
+        "doc_id": "slurm_training",
+        "title": "SLURM Training Jobs",
+        "score": 0.5860393049073928,
+        "snippet": "# SLURM Training Jobs  SLURM schedules research-compute jobs, allocates CPU or GPU resources, and captures logs for long-running model training."
+      }
+    ],
+    "retrieval_top1_hit": null,
+    "retrieval_topk_hit": null,
+    "failure_reasons": [
+      "answered_unanswerable_case",
+      "cited_source_not_in_provisional_relevance_labels"
+    ],
+    "semantic_support_verified": false
+  },
+  {
+    "question_id": "dev-overlap05",
+    "question": "Which rollback command restores our Dockerized FastAPI service?",
+    "category": "overlapping_vocabulary_unanswerable",
+    "expected_answerable": false,
+    "relevant_doc_ids": [],
+    "label_status": "pending_human_review",
+    "provenance": "Authored development fixture based on the included synthetic corpus; not human-reviewed, not locked evaluation, and not a model-generated reference answer.",
+    "expected_rationale": "Deployment notes list concepts without this service's rollback command.",
+    "status": "answered",
+    "abstention_reason": null,
+    "answer": "# Dockerized FastAPI Deployment  Docker packages a FastAPI model service with pinned dependencies, a health check, and a stable uvicorn startup command for cloud deployment. [docker_fastapi]",
+    "retrieved_sources": [
+      {
+        "doc_id": "docker_fastapi",
+        "title": "Dockerized FastAPI Deployment",
+        "score": 0.5879834008999734,
+        "snippet": "# Dockerized FastAPI Deployment  Docker packages a FastAPI model service with pinned dependencies, a health check, and a stable uvicorn startup command for cloud deployment."
+      },
+      {
+        "doc_id": "cloud_runbook",
+        "title": "Cloud Deployment Runbook",
+        "score": 0.06483837926745674,
+        "snippet": "# Cloud Deployment Runbook  A deployment runbook documents build commands, environment variables, rollback steps, and health checks for cloud services."
+      }
+    ],
+    "cited_sources": [
+      {
+        "doc_id": "docker_fastapi",
+        "title": "Dockerized FastAPI Deployment",
+        "score": 0.5879834008999734,
+        "snippet": "# Dockerized FastAPI Deployment  Docker packages a FastAPI model service with pinned dependencies, a health check, and a stable uvicorn startup command for cloud deployment."
+      }
+    ],
+    "retrieval_top1_hit": null,
+    "retrieval_topk_hit": null,
+    "failure_reasons": [
+      "answered_unanswerable_case",
+      "cited_source_not_in_provisional_relevance_labels"
+    ],
+    "semantic_support_verified": false
+  },
+  {
+    "question_id": "dev-overlap06",
+    "question": "What is the exact redaction accuracy of the PII redaction system?",
+    "category": "overlapping_vocabulary_unanswerable",
+    "expected_answerable": false,
+    "relevant_doc_ids": [],
+    "label_status": "pending_human_review",
+    "provenance": "Authored development fixture based on the included synthetic corpus; not human-reviewed, not locked evaluation, and not a model-generated reference answer.",
+    "expected_rationale": "The PII note lists removed information but gives no accuracy evaluation.",
+    "status": "answered",
+    "abstention_reason": null,
+    "answer": "# PII Redaction  PII redaction removes names, emails, phone numbers, addresses, and identifiers before text is logged or sent to a model. [pii_redaction]",
+    "retrieved_sources": [
+      {
+        "doc_id": "pii_redaction",
+        "title": "PII Redaction",
+        "score": 0.744972327430938,
+        "snippet": "# PII Redaction  PII redaction removes names, emails, phone numbers, addresses, and identifiers before text is logged or sent to a model."
+      },
+      {
+        "doc_id": "prompt_injection",
+        "title": "Prompt Injection Defense",
+        "score": 0.052802287780256495,
+        "snippet": "# Prompt Injection Defense  Prompt injection defense separates system instructions from retrieved content and filters untrusted instructions before generation."
+      }
+    ],
+    "cited_sources": [
+      {
+        "doc_id": "pii_redaction",
+        "title": "PII Redaction",
+        "score": 0.744972327430938,
+        "snippet": "# PII Redaction  PII redaction removes names, emails, phone numbers, addresses, and identifiers before text is logged or sent to a model."
+      }
+    ],
+    "retrieval_top1_hit": null,
+    "retrieval_topk_hit": null,
+    "failure_reasons": [
+      "answered_unanswerable_case",
+      "cited_source_not_in_provisional_relevance_labels"
+    ],
+    "semantic_support_verified": false
+  },
+  {
+    "question_id": "dev-overlap07",
+    "question": "Which database vendor stores our approved model versions?",
+    "category": "overlapping_vocabulary_unanswerable",
+    "expected_answerable": false,
+    "relevant_doc_ids": [],
+    "label_status": "pending_human_review",
+    "provenance": "Authored development fixture based on the included synthetic corpus; not human-reviewed, not locked evaluation, and not a model-generated reference answer.",
+    "expected_rationale": "The registry note does not name a database vendor.",
+    "status": "answered",
+    "abstention_reason": null,
+    "answer": "# Model Registry Governance  A model registry stores approved model versions, signatures, metrics, owners, and deployment stages for controlled releases. [model_registry]",
+    "retrieved_sources": [
+      {
+        "doc_id": "model_registry",
+        "title": "Model Registry Governance",
+        "score": 0.2675205850303871,
+        "snippet": "# Model Registry Governance  A model registry stores approved model versions, signatures, metrics, owners, and deployment stages for controlled releases."
+      },
+      {
+        "doc_id": "schema_migration",
+        "title": "Schema Migration",
+        "score": 0.09822154384216826,
+        "snippet": "# Schema Migration  Schema migrations apply controlled database changes and prevent breaking downstream analytics or inference jobs."
+      },
+      {
+        "doc_id": "mlflow_tracking",
+        "title": "MLflow Experiment Tracking",
+        "score": 0.07055171569167809,
+        "snippet": "# MLflow Experiment Tracking  MLflow records parameters, metrics, artifacts, and model versions so machine learning experiments can be reproduced and compared."
+      }
+    ],
+    "cited_sources": [
+      {
+        "doc_id": "model_registry",
+        "title": "Model Registry Governance",
+        "score": 0.2675205850303871,
+        "snippet": "# Model Registry Governance  A model registry stores approved model versions, signatures, metrics, owners, and deployment stages for controlled releases."
+      }
+    ],
+    "retrieval_top1_hit": null,
+    "retrieval_topk_hit": null,
+    "failure_reasons": [
+      "answered_unanswerable_case",
+      "cited_source_not_in_provisional_relevance_labels"
+    ],
+    "semantic_support_verified": false
+  },
+  {
+    "question_id": "dev-overlap08",
+    "question": "What measured conversion rate did treatment achieve in the A/B test?",
+    "category": "overlapping_vocabulary_unanswerable",
+    "expected_answerable": false,
+    "relevant_doc_ids": [],
+    "label_status": "pending_human_review",
+    "provenance": "Authored development fixture based on the included synthetic corpus; not human-reviewed, not locked evaluation, and not a model-generated reference answer.",
+    "expected_rationale": "The test-readout note describes metrics but supplies no trial outcomes.",
+    "status": "answered",
+    "abstention_reason": null,
+    "answer": "# A/B Test Readout  A/B test readouts compare control and treatment conversion rates, confidence intervals, p-values, and rollout recommendations. [ab_testing]",
+    "retrieved_sources": [
+      {
+        "doc_id": "rate_limiting",
+        "title": "API Rate Limiting",
+        "score": 0.3405201189504291,
+        "snippet": "Operational note: API Rate Limiting supports reliable ML engineering workflows by making model behavior easier to test, deploy, monitor, and explain."
+      },
+      {
+        "doc_id": "ab_testing",
+        "title": "A/B Test Readout",
+        "score": 0.28230591316013326,
+        "snippet": "# A/B Test Readout  A/B test readouts compare control and treatment conversion rates, confidence intervals, p-values, and rollout recommendations."
+      },
+      {
+        "doc_id": "unit_tests",
+        "title": "Unit Test Coverage",
+        "score": 0.025264045580745464,
+        "snippet": "# Unit Test Coverage  Unit tests validate retrieval ranking, API response shape, schema validation, and edge cases before code reaches production."
+      }
+    ],
+    "cited_sources": [
+      {
+        "doc_id": "ab_testing",
+        "title": "A/B Test Readout",
+        "score": 0.28230591316013326,
+        "snippet": "# A/B Test Readout  A/B test readouts compare control and treatment conversion rates, confidence intervals, p-values, and rollout recommendations."
+      }
+    ],
+    "retrieval_top1_hit": null,
+    "retrieval_topk_hit": null,
+    "failure_reasons": [
+      "answered_unanswerable_case",
+      "cited_source_not_in_provisional_relevance_labels"
+    ],
+    "semantic_support_verified": false
+  },
+  {
+    "question_id": "dev-overlap09",
+    "question": "What dataset row count was written by yesterday's batch inference?",
+    "category": "overlapping_vocabulary_unanswerable",
+    "expected_answerable": false,
+    "relevant_doc_ids": [],
+    "label_status": "pending_human_review",
+    "provenance": "Authored development fixture based on the included synthetic corpus; not human-reviewed, not locked evaluation, and not a model-generated reference answer.",
+    "expected_rationale": "The batch note specifies validation, not a recorded run's row count.",
+    "status": "answered",
+    "abstention_reason": null,
+    "answer": "# Batch Inference Pipeline  Batch inference scores scheduled datasets, writes predictions to storage, and validates row counts before downstream use. [batch_inference]",
+    "retrieved_sources": [
+      {
+        "doc_id": "batch_inference",
+        "title": "Batch Inference Pipeline",
+        "score": 0.5624880134737767,
+        "snippet": "# Batch Inference Pipeline  Batch inference scores scheduled datasets, writes predictions to storage, and validates row counts before downstream use."
+      },
+      {
+        "doc_id": "evaluation_dataset",
+        "title": "Evaluation Dataset Design",
+        "score": 0.2458266032709314,
+        "snippet": "# Evaluation Dataset Design  Evaluation datasets should include expected answers, expected source documents, negative cases, and stable IDs for repeatable scoring."
+      },
+      {
+        "doc_id": "online_inference",
+        "title": "Online Inference API",
+        "score": 0.1720012054868697,
+        "snippet": "# Online Inference API  Online inference serves predictions through low-latency endpoints with request validation, error handling, and structured logs."
+      }
+    ],
+    "cited_sources": [
+      {
+        "doc_id": "batch_inference",
+        "title": "Batch Inference Pipeline",
+        "score": 0.5624880134737767,
+        "snippet": "# Batch Inference Pipeline  Batch inference scores scheduled datasets, writes predictions to storage, and validates row counts before downstream use."
+      }
+    ],
+    "retrieval_top1_hit": null,
+    "retrieval_topk_hit": null,
+    "failure_reasons": [
+      "answered_unanswerable_case",
+      "cited_source_not_in_provisional_relevance_labels"
+    ],
+    "semantic_support_verified": false
+  },
+  {
+    "question_id": "dev-overlap10",
+    "question": "Which names and email addresses appeared in the original unredacted text?",
+    "category": "overlapping_vocabulary_unanswerable",
+    "expected_answerable": false,
+    "relevant_doc_ids": [],
+    "label_status": "pending_human_review",
+    "provenance": "Authored development fixture based on the included synthetic corpus; not human-reviewed, not locked evaluation, and not a model-generated reference answer.",
+    "expected_rationale": "The redaction note has no underlying records or identifying values.",
+    "status": "answered",
+    "abstention_reason": null,
+    "answer": "# PII Redaction  PII redaction removes names, emails, phone numbers, addresses, and identifiers before text is logged or sent to a model. [pii_redaction]",
+    "retrieved_sources": [
+      {
+        "doc_id": "pii_redaction",
+        "title": "PII Redaction",
+        "score": 0.2543724587454084,
+        "snippet": "# PII Redaction  PII redaction removes names, emails, phone numbers, addresses, and identifiers before text is logged or sent to a model."
+      },
+      {
+        "doc_id": "structured_logging",
+        "title": "Structured Logging",
+        "score": 0.08332600319459209,
+        "snippet": "# Structured Logging  Structured logs capture request IDs, latency, endpoint names, and error types for debugging deployed ML services."
+      }
+    ],
+    "cited_sources": [
+      {
+        "doc_id": "pii_redaction",
+        "title": "PII Redaction",
+        "score": 0.2543724587454084,
+        "snippet": "# PII Redaction  PII redaction removes names, emails, phone numbers, addresses, and identifiers before text is logged or sent to a model."
+      }
+    ],
+    "retrieval_top1_hit": null,
+    "retrieval_topk_hit": null,
+    "failure_reasons": [
+      "answered_unanswerable_case",
+      "cited_source_not_in_provisional_relevance_labels"
+    ],
+    "semantic_support_verified": false
+  }
+]

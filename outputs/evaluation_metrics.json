@@ -1,9 +1,2340 @@
 {
+  "schema_version": 2,
   "documents_indexed": 32,
-  "eval_questions": 20,
-  "retrieval_at_1": 0.95,
+  "eval_questions": 52,
+  "retrieval_at_1": 0.96875,
   "retrieval_at_3": 1.0,
-  "citation_coverage": 1.0,
-  "avg_latency_ms": 0.13,
-  "p95_latency_ms": 0.16
+  "metrics": {
+    "retrieval_hit_at_1": {
+      "numerator": 31,
+      "denominator": 32,
+      "value": 0.96875
+    },
+    "retrieval_hit_at_3": {
+      "numerator": 32,
+      "denominator": 32,
+      "value": 1.0
+    },
+    "retrieval_precision_at_3_on_answerable": {
+      "numerator": 32,
+      "denominator": 96,
+      "value": 0.3333333333333333
+    },
+    "returned_candidate_relevance_precision_on_answerable": {
+      "numerator": 32,
+      "denominator": 90,
+      "value": 0.35555555555555557
+    },
+    "retrieval_source_presence": {
+      "numerator": 44,
+      "denominator": 52,
+      "value": 0.8461538461538461
+    },
+    "answered_source_presence": {
+      "numerator": 39,
+      "denominator": 39,
+      "value": 1.0
+    },
+    "citation_id_validity": {
+      "numerator": 46,
+      "denominator": 46,
+      "value": 1.0
+    },
+    "extractive_quote_traceability": {
+      "numerator": 46,
+      "denominator": 46,
+      "value": 1.0
+    },
+    "citation_relevance_precision": {
+      "numerator": 31,
+      "denominator": 46,
+      "value": 0.6739130434782609
+    },
+    "answerable_cases_with_relevant_citation": {
+      "numerator": 31,
+      "denominator": 32,
+      "value": 0.96875
+    },
+    "answerability_accuracy": {
+      "numerator": 43,
+      "denominator": 52,
+      "value": 0.8269230769230769
+    },
+    "answerable_response_rate": {
+      "numerator": 31,
+      "denominator": 32,
+      "value": 0.96875
+    },
+    "unanswerable_abstention_rate": {
+      "numerator": 12,
+      "denominator": 20,
+      "value": 0.6
+    },
+    "false_answer_rate_on_unanswerable": {
+      "numerator": 8,
+      "denominator": 20,
+      "value": 0.4
+    },
+    "unanswerable_with_retrieval_abstention_rate": {
+      "numerator": 4,
+      "denominator": 12,
+      "value": 0.3333333333333333
+    }
+  },
+  "answerability_confusion": {
+    "answered_answerable": 31,
+    "abstained_answerable": 1,
+    "answered_unanswerable": 8,
+    "abstained_unanswerable": 12
+  },
+  "category_counts": {
+    "original_answerable_fixture": {
+      "cases": 20,
+      "answerable": 20,
+      "answered": 19,
+      "abstained": 1,
+      "answerability_correct": 19,
+      "failed_cases": 6
+    },
+    "additional_answerable": {
+      "cases": 12,
+      "answerable": 12,
+      "answered": 12,
+      "abstained": 0,
+      "answerability_correct": 12,
+      "failed_cases": 2
+    },
+    "overlapping_vocabulary_unanswerable": {
+      "cases": 12,
+      "answerable": 0,
+      "answered": 8,
+      "abstained": 4,
+      "answerability_correct": 4,
+      "failed_cases": 8
+    },
+    "out_of_domain_unanswerable": {
+      "cases": 8,
+      "answerable": 0,
+      "answered": 0,
+      "abstained": 8,
+      "answerability_correct": 8,
+      "failed_cases": 0
+    }
+  },
+  "failed_cases": 16,
+  "case_results": [
+    {
+      "question_id": "q01",
+      "question": "How should experiments be tracked for reproducible machine learning?",
+      "category": "original_answerable_fixture",
+      "expected_answerable": true,
+      "relevant_doc_ids": [
+        "mlflow_tracking"
+      ],
+      "label_status": "pending_human_review",
+      "provenance": "Inherited authored development fixture; reference label not independently reviewed.",
+      "expected_rationale": null,
+      "status": "answered",
+      "abstention_reason": null,
+      "answer": "# MLflow Experiment Tracking  MLflow records parameters, metrics, artifacts, and model versions so machine learning experiments can be reproduced and compared. [mlflow_tracking]",
+      "retrieved_sources": [
+        {
+          "doc_id": "mlflow_tracking",
+          "title": "MLflow Experiment Tracking",
+          "score": 0.22807586095737387,
+          "snippet": "# MLflow Experiment Tracking  MLflow records parameters, metrics, artifacts, and model versions so machine learning experiments can be reproduced and compared."
+        },
+        {
+          "doc_id": "rag_citations",
+          "title": "RAG Citation Policy",
+          "score": 0.06550928032467776,
+          "snippet": "# RAG Citation Policy  Retrieval augmented generation should return source citations, document identifiers, and quoted evidence so users can audit generated answers."
+        },
+        {
+          "doc_id": "evaluation_dataset",
+          "title": "Evaluation Dataset Design",
+          "score": 0.0628341535790128,
+          "snippet": "# Evaluation Dataset Design  Evaluation datasets should include expected answers, expected source documents, negative cases, and stable IDs for repeatable scoring."
+        }
+      ],
+      "cited_sources": [
+        {
+          "doc_id": "mlflow_tracking",
+          "title": "MLflow Experiment Tracking",
+          "score": 0.22807586095737387,
+          "snippet": "# MLflow Experiment Tracking  MLflow records parameters, metrics, artifacts, and model versions so machine learning experiments can be reproduced and compared."
+        }
+      ],
+      "retrieval_top1_hit": true,
+      "retrieval_topk_hit": true,
+      "failure_reasons": [],
+      "semantic_support_verified": false
+    },
+    {
+      "question_id": "q02",
+      "question": "What should a Dockerized FastAPI deployment include?",
+      "category": "original_answerable_fixture",
+      "expected_answerable": true,
+      "relevant_doc_ids": [
+        "docker_fastapi"
+      ],
+      "label_status": "pending_human_review",
+      "provenance": "Inherited authored development fixture; reference label not independently reviewed.",
+      "expected_rationale": null,
+      "status": "answered",
+      "abstention_reason": null,
+      "answer": "# Dockerized FastAPI Deployment  Docker packages a FastAPI model service with pinned dependencies, a health check, and a stable uvicorn startup command for cloud deployment. [docker_fastapi] # Evaluation Dataset Design  Evaluation datasets should include expected answers, expected source documents, negative cases, and stable IDs for repeatable scoring. [evaluation_dataset]",
+      "retrieved_sources": [
+        {
+          "doc_id": "docker_fastapi",
+          "title": "Dockerized FastAPI Deployment",
+          "score": 0.6499185588099889,
+          "snippet": "# Dockerized FastAPI Deployment  Docker packages a FastAPI model service with pinned dependencies, a health check, and a stable uvicorn startup command for cloud deployment."
+        },
+        {
+          "doc_id": "cloud_runbook",
+          "title": "Cloud Deployment Runbook",
+          "score": 0.15977156297677744,
+          "snippet": "# Cloud Deployment Runbook  A deployment runbook documents build commands, environment variables, rollback steps, and health checks for cloud services."
+        },
+        {
+          "doc_id": "evaluation_dataset",
+          "title": "Evaluation Dataset Design",
+          "score": 0.13190637068814787,
+          "snippet": "# Evaluation Dataset Design  Evaluation datasets should include expected answers, expected source documents, negative cases, and stable IDs for repeatable scoring."
+        }
+      ],
+      "cited_sources": [
+        {
+          "doc_id": "docker_fastapi",
+          "title": "Dockerized FastAPI Deployment",
+          "score": 0.6499185588099889,
+          "snippet": "# Dockerized FastAPI Deployment  Docker packages a FastAPI model service with pinned dependencies, a health check, and a stable uvicorn startup command for cloud deployment."
+        },
+        {
+          "doc_id": "evaluation_dataset",
+          "title": "Evaluation Dataset Design",
+          "score": 0.13190637068814787,
+          "snippet": "# Evaluation Dataset Design  Evaluation datasets should include expected answers, expected source documents, negative cases, and stable IDs for repeatable scoring."
+        }
+      ],
+      "retrieval_top1_hit": true,
+      "retrieval_topk_hit": true,
+      "failure_reasons": [
+        "cited_source_not_in_provisional_relevance_labels"
+      ],
+      "semantic_support_verified": false
+    },
+    {
+      "question_id": "q03",
+      "question": "Why should a RAG answer include citations?",
+      "category": "original_answerable_fixture",
+      "expected_answerable": true,
+      "relevant_doc_ids": [
+        "rag_citations"
+      ],
+      "label_status": "pending_human_review",
+      "provenance": "Inherited authored development fixture; reference label not independently reviewed.",
+      "expected_rationale": null,
+      "status": "answered",
+      "abstention_reason": null,
+      "answer": "# RAG Citation Policy  Retrieval augmented generation should return source citations, document identifiers, and quoted evidence so users can audit generated answers. [rag_citations] # Evaluation Dataset Design  Evaluation datasets should include expected answers, expected source documents, negative cases, and stable IDs for repeatable scoring. [evaluation_dataset]",
+      "retrieved_sources": [
+        {
+          "doc_id": "rag_citations",
+          "title": "RAG Citation Policy",
+          "score": 0.31991553380108323,
+          "snippet": "# RAG Citation Policy  Retrieval augmented generation should return source citations, document identifiers, and quoted evidence so users can audit generated answers."
+        },
+        {
+          "doc_id": "faithfulness_eval",
+          "title": "Answer Faithfulness Evaluation",
+          "score": 0.17203369390931908,
+          "snippet": "# Answer Faithfulness Evaluation  Faithfulness evaluation checks whether generated answers are supported by retrieved evidence rather than unsupported model guesses."
+        },
+        {
+          "doc_id": "evaluation_dataset",
+          "title": "Evaluation Dataset Design",
+          "score": 0.131604456580867,
+          "snippet": "# Evaluation Dataset Design  Evaluation datasets should include expected answers, expected source documents, negative cases, and stable IDs for repeatable scoring."
+        }
+      ],
+      "cited_sources": [
+        {
+          "doc_id": "rag_citations",
+          "title": "RAG Citation Policy",
+          "score": 0.31991553380108323,
+          "snippet": "# RAG Citation Policy  Retrieval augmented generation should return source citations, document identifiers, and quoted evidence so users can audit generated answers."
+        },
+        {
+          "doc_id": "evaluation_dataset",
+          "title": "Evaluation Dataset Design",
+          "score": 0.131604456580867,
+          "snippet": "# Evaluation Dataset Design  Evaluation datasets should include expected answers, expected source documents, negative cases, and stable IDs for repeatable scoring."
+        }
+      ],
+      "retrieval_top1_hit": true,
+      "retrieval_topk_hit": true,
+      "failure_reasons": [
+        "cited_source_not_in_provisional_relevance_labels"
+      ],
+      "semantic_support_verified": false
+    },
+    {
+      "question_id": "q04",
+      "question": "How does vector search choose context passages?",
+      "category": "original_answerable_fixture",
+      "expected_answerable": true,
+      "relevant_doc_ids": [
+        "vector_search"
+      ],
+      "label_status": "pending_human_review",
+      "provenance": "Inherited authored development fixture; reference label not independently reviewed.",
+      "expected_rationale": null,
+      "status": "answered",
+      "abstention_reason": null,
+      "answer": "# Vector Search Retrieval  Vector search ranks documents by embedding or sparse-vector similarity and returns top-k context passages for answer generation. [vector_search] # Document Chunking  Document chunking splits long files into retrievable passages while preserving enough context for source-grounded answers. [document_chunking]",
+      "retrieved_sources": [
+        {
+          "doc_id": "vector_search",
+          "title": "Vector Search Retrieval",
+          "score": 0.7363368233247166,
+          "snippet": "# Vector Search Retrieval  Vector search ranks documents by embedding or sparse-vector similarity and returns top-k context passages for answer generation."
+        },
+        {
+          "doc_id": "document_chunking",
+          "title": "Document Chunking",
+          "score": 0.13708030915137104,
+          "snippet": "# Document Chunking  Document chunking splits long files into retrievable passages while preserving enough context for source-grounded answers."
+        }
+      ],
+      "cited_sources": [
+        {
+          "doc_id": "vector_search",
+          "title": "Vector Search Retrieval",
+          "score": 0.7363368233247166,
+          "snippet": "# Vector Search Retrieval  Vector search ranks documents by embedding or sparse-vector similarity and returns top-k context passages for answer generation."
+        },
+        {
+          "doc_id": "document_chunking",
+          "title": "Document Chunking",
+          "score": 0.13708030915137104,
+          "snippet": "# Document Chunking  Document chunking splits long files into retrievable passages while preserving enough context for source-grounded answers."
+        }
+      ],
+      "retrieval_top1_hit": true,
+      "retrieval_topk_hit": true,
+      "failure_reasons": [
+        "cited_source_not_in_provisional_relevance_labels"
+      ],
+      "semantic_support_verified": false
+    },
+    {
+      "question_id": "q05",
+      "question": "Which metric helps detect slow model API responses?",
+      "category": "original_answerable_fixture",
+      "expected_answerable": true,
+      "relevant_doc_ids": [
+        "latency_monitoring"
+      ],
+      "label_status": "pending_human_review",
+      "provenance": "Inherited authored development fixture; reference label not independently reviewed.",
+      "expected_rationale": null,
+      "status": "abstained",
+      "abstention_reason": "weak_lexical_evidence",
+      "answer": "I cannot answer from the indexed corpus: no passage passed the lexical evidence checks.",
+      "retrieved_sources": [
+        {
+          "doc_id": "retrieval_at_k",
+          "title": "Retrieval@K Metric",
+          "score": 0.369419720738191,
+          "snippet": "Operational note: Retrieval@K Metric supports reliable ML engineering workflows by making model behavior easier to test, deploy, monitor, and explain."
+        },
+        {
+          "doc_id": "online_inference",
+          "title": "Online Inference API",
+          "score": 0.1759672798856172,
+          "snippet": "Operational note: Online Inference API supports reliable ML engineering workflows by making model behavior easier to test, deploy, monitor, and explain."
+        },
+        {
+          "doc_id": "latency_monitoring",
+          "title": "API Latency Monitoring",
+          "score": 0.17258702937908804,
+          "snippet": "# API Latency Monitoring  Latency monitoring tracks average, p95, and p99 response time so deployed model APIs can be debugged before users notice slowdowns."
+        }
+      ],
+      "cited_sources": [],
+      "retrieval_top1_hit": false,
+      "retrieval_topk_hit": true,
+      "failure_reasons": [
+        "abstained_on_answerable_case"
+      ],
+      "semantic_support_verified": false
+    },
+    {
+      "question_id": "q06",
+      "question": "How can teams detect unreliable live feature distributions?",
+      "category": "original_answerable_fixture",
+      "expected_answerable": true,
+      "relevant_doc_ids": [
+        "data_drift"
+      ],
+      "label_status": "pending_human_review",
+      "provenance": "Inherited authored development fixture; reference label not independently reviewed.",
+      "expected_rationale": null,
+      "status": "answered",
+      "abstention_reason": null,
+      "answer": "# Data Drift Detection  Data drift checks compare live feature distributions with training data distributions to detect when a model may become unreliable. [data_drift]",
+      "retrieved_sources": [
+        {
+          "doc_id": "data_drift",
+          "title": "Data Drift Detection",
+          "score": 0.34782948724518165,
+          "snippet": "# Data Drift Detection  Data drift checks compare live feature distributions with training data distributions to detect when a model may become unreliable."
+        },
+        {
+          "doc_id": "feature_validation",
+          "title": "Feature Validation Rules",
+          "score": 0.21176265704781963,
+          "snippet": "# Feature Validation Rules  Feature validation enforces schema, ranges, null thresholds, and categorical value constraints before model inference."
+        },
+        {
+          "doc_id": "rag_citations",
+          "title": "RAG Citation Policy",
+          "score": 0.03975759747387996,
+          "snippet": "# RAG Citation Policy  Retrieval augmented generation should return source citations, document identifiers, and quoted evidence so users can audit generated answers."
+        }
+      ],
+      "cited_sources": [
+        {
+          "doc_id": "data_drift",
+          "title": "Data Drift Detection",
+          "score": 0.34782948724518165,
+          "snippet": "# Data Drift Detection  Data drift checks compare live feature distributions with training data distributions to detect when a model may become unreliable."
+        }
+      ],
+      "retrieval_top1_hit": true,
+      "retrieval_topk_hit": true,
+      "failure_reasons": [],
+      "semantic_support_verified": false
+    },
+    {
+      "question_id": "q07",
+      "question": "Where should approved model versions and deployment stages be stored?",
+      "category": "original_answerable_fixture",
+      "expected_answerable": true,
+      "relevant_doc_ids": [
+        "model_registry"
+      ],
+      "label_status": "pending_human_review",
+      "provenance": "Inherited authored development fixture; reference label not independently reviewed.",
+      "expected_rationale": null,
+      "status": "answered",
+      "abstention_reason": null,
+      "answer": "# Model Registry Governance  A model registry stores approved model versions, signatures, metrics, owners, and deployment stages for controlled releases. [model_registry]",
+      "retrieved_sources": [
+        {
+          "doc_id": "model_registry",
+          "title": "Model Registry Governance",
+          "score": 0.30125368131391933,
+          "snippet": "# Model Registry Governance  A model registry stores approved model versions, signatures, metrics, owners, and deployment stages for controlled releases."
+        },
+        {
+          "doc_id": "docker_fastapi",
+          "title": "Dockerized FastAPI Deployment",
+          "score": 0.17329285568717398,
+          "snippet": "# Dockerized FastAPI Deployment  Docker packages a FastAPI model service with pinned dependencies, a health check, and a stable uvicorn startup command for cloud deployment."
+        },
+        {
+          "doc_id": "cloud_runbook",
+          "title": "Cloud Deployment Runbook",
+          "score": 0.16711839005665477,
+          "snippet": "Operational note: Cloud Deployment Runbook supports reliable ML engineering workflows by making model behavior easier to test, deploy, monitor, and explain."
+        }
+      ],
+      "cited_sources": [
+        {
+          "doc_id": "model_registry",
+          "title": "Model Registry Governance",
+          "score": 0.30125368131391933,
+          "snippet": "# Model Registry Governance  A model registry stores approved model versions, signatures, metrics, owners, and deployment stages for controlled releases."
+        }
+      ],
+      "retrieval_top1_hit": true,
+      "retrieval_topk_hit": true,
+      "failure_reasons": [],
+      "semantic_support_verified": false
+    },
+    {
+      "question_id": "q08",
+      "question": "What does batch inference validate before downstream use?",
+      "category": "original_answerable_fixture",
+      "expected_answerable": true,
+      "relevant_doc_ids": [
+        "batch_inference"
+      ],
+      "label_status": "pending_human_review",
+      "provenance": "Inherited authored development fixture; reference label not independently reviewed.",
+      "expected_rationale": null,
+      "status": "answered",
+      "abstention_reason": null,
+      "answer": "# Batch Inference Pipeline  Batch inference scores scheduled datasets, writes predictions to storage, and validates row counts before downstream use. [batch_inference]",
+      "retrieved_sources": [
+        {
+          "doc_id": "batch_inference",
+          "title": "Batch Inference Pipeline",
+          "score": 0.568474300125073,
+          "snippet": "# Batch Inference Pipeline  Batch inference scores scheduled datasets, writes predictions to storage, and validates row counts before downstream use."
+        },
+        {
+          "doc_id": "online_inference",
+          "title": "Online Inference API",
+          "score": 0.14842736023115413,
+          "snippet": "# Online Inference API  Online inference serves predictions through low-latency endpoints with request validation, error handling, and structured logs."
+        },
+        {
+          "doc_id": "schema_migration",
+          "title": "Schema Migration",
+          "score": 0.10857012783134326,
+          "snippet": "# Schema Migration  Schema migrations apply controlled database changes and prevent breaking downstream analytics or inference jobs."
+        }
+      ],
+      "cited_sources": [
+        {
+          "doc_id": "batch_inference",
+          "title": "Batch Inference Pipeline",
+          "score": 0.568474300125073,
+          "snippet": "# Batch Inference Pipeline  Batch inference scores scheduled datasets, writes predictions to storage, and validates row counts before downstream use."
+        }
+      ],
+      "retrieval_top1_hit": true,
+      "retrieval_topk_hit": true,
+      "failure_reasons": [],
+      "semantic_support_verified": false
+    },
+    {
+      "question_id": "q09",
+      "question": "What is online inference for low latency predictions?",
+      "category": "original_answerable_fixture",
+      "expected_answerable": true,
+      "relevant_doc_ids": [
+        "online_inference"
+      ],
+      "label_status": "pending_human_review",
+      "provenance": "Inherited authored development fixture; reference label not independently reviewed.",
+      "expected_rationale": null,
+      "status": "answered",
+      "abstention_reason": null,
+      "answer": "# Online Inference API  Online inference serves predictions through low-latency endpoints with request validation, error handling, and structured logs. [online_inference] # Batch Inference Pipeline  Batch inference scores scheduled datasets, writes predictions to storage, and validates row counts before downstream use. [batch_inference]",
+      "retrieved_sources": [
+        {
+          "doc_id": "online_inference",
+          "title": "Online Inference API",
+          "score": 0.6423271105191467,
+          "snippet": "# Online Inference API  Online inference serves predictions through low-latency endpoints with request validation, error handling, and structured logs."
+        },
+        {
+          "doc_id": "batch_inference",
+          "title": "Batch Inference Pipeline",
+          "score": 0.2433792513854758,
+          "snippet": "# Batch Inference Pipeline  Batch inference scores scheduled datasets, writes predictions to storage, and validates row counts before downstream use."
+        },
+        {
+          "doc_id": "latency_monitoring",
+          "title": "API Latency Monitoring",
+          "score": 0.20895480921370269,
+          "snippet": "# API Latency Monitoring  Latency monitoring tracks average, p95, and p99 response time so deployed model APIs can be debugged before users notice slowdowns."
+        }
+      ],
+      "cited_sources": [
+        {
+          "doc_id": "online_inference",
+          "title": "Online Inference API",
+          "score": 0.6423271105191467,
+          "snippet": "# Online Inference API  Online inference serves predictions through low-latency endpoints with request validation, error handling, and structured logs."
+        },
+        {
+          "doc_id": "batch_inference",
+          "title": "Batch Inference Pipeline",
+          "score": 0.2433792513854758,
+          "snippet": "# Batch Inference Pipeline  Batch inference scores scheduled datasets, writes predictions to storage, and validates row counts before downstream use."
+        }
+      ],
+      "retrieval_top1_hit": true,
+      "retrieval_topk_hit": true,
+      "failure_reasons": [
+        "cited_source_not_in_provisional_relevance_labels"
+      ],
+      "semantic_support_verified": false
+    },
+    {
+      "question_id": "q10",
+      "question": "Which rules catch bad model input features?",
+      "category": "original_answerable_fixture",
+      "expected_answerable": true,
+      "relevant_doc_ids": [
+        "feature_validation"
+      ],
+      "label_status": "pending_human_review",
+      "provenance": "Inherited authored development fixture; reference label not independently reviewed.",
+      "expected_rationale": null,
+      "status": "answered",
+      "abstention_reason": null,
+      "answer": "# Feature Validation Rules  Feature validation enforces schema, ranges, null thresholds, and categorical value constraints before model inference. [feature_validation]",
+      "retrieved_sources": [
+        {
+          "doc_id": "feature_validation",
+          "title": "Feature Validation Rules",
+          "score": 0.3354769640382068,
+          "snippet": "# Feature Validation Rules  Feature validation enforces schema, ranges, null thresholds, and categorical value constraints before model inference."
+        },
+        {
+          "doc_id": "incident_response",
+          "title": "ML Incident Response",
+          "score": 0.11916006169836271,
+          "snippet": "# ML Incident Response  ML incident response defines triage steps for bad predictions, latency spikes, data drift, and failed deployments."
+        },
+        {
+          "doc_id": "model_registry",
+          "title": "Model Registry Governance",
+          "score": 0.04721514084080616,
+          "snippet": "# Model Registry Governance  A model registry stores approved model versions, signatures, metrics, owners, and deployment stages for controlled releases."
+        }
+      ],
+      "cited_sources": [
+        {
+          "doc_id": "feature_validation",
+          "title": "Feature Validation Rules",
+          "score": 0.3354769640382068,
+          "snippet": "# Feature Validation Rules  Feature validation enforces schema, ranges, null thresholds, and categorical value constraints before model inference."
+        }
+      ],
+      "retrieval_top1_hit": true,
+      "retrieval_topk_hit": true,
+      "failure_reasons": [],
+      "semantic_support_verified": false
+    },
+    {
+      "question_id": "q11",
+      "question": "What does an A/B test readout compare?",
+      "category": "original_answerable_fixture",
+      "expected_answerable": true,
+      "relevant_doc_ids": [
+        "ab_testing"
+      ],
+      "label_status": "pending_human_review",
+      "provenance": "Inherited authored development fixture; reference label not independently reviewed.",
+      "expected_rationale": null,
+      "status": "answered",
+      "abstention_reason": null,
+      "answer": "# A/B Test Readout  A/B test readouts compare control and treatment conversion rates, confidence intervals, p-values, and rollout recommendations. [ab_testing]",
+      "retrieved_sources": [
+        {
+          "doc_id": "ab_testing",
+          "title": "A/B Test Readout",
+          "score": 0.6393792928813823,
+          "snippet": "# A/B Test Readout  A/B test readouts compare control and treatment conversion rates, confidence intervals, p-values, and rollout recommendations."
+        },
+        {
+          "doc_id": "data_drift",
+          "title": "Data Drift Detection",
+          "score": 0.08826633653359658,
+          "snippet": "# Data Drift Detection  Data drift checks compare live feature distributions with training data distributions to detect when a model may become unreliable."
+        },
+        {
+          "doc_id": "unit_tests",
+          "title": "Unit Test Coverage",
+          "score": 0.0323896100041353,
+          "snippet": "# Unit Test Coverage  Unit tests validate retrieval ranking, API response shape, schema validation, and edge cases before code reaches production."
+        }
+      ],
+      "cited_sources": [
+        {
+          "doc_id": "ab_testing",
+          "title": "A/B Test Readout",
+          "score": 0.6393792928813823,
+          "snippet": "# A/B Test Readout  A/B test readouts compare control and treatment conversion rates, confidence intervals, p-values, and rollout recommendations."
+        }
+      ],
+      "retrieval_top1_hit": true,
+      "retrieval_topk_hit": true,
+      "failure_reasons": [],
+      "semantic_support_verified": false
+    },
+    {
+      "question_id": "q12",
+      "question": "How is cohort retention measured after 7 or 30 days?",
+      "category": "original_answerable_fixture",
+      "expected_answerable": true,
+      "relevant_doc_ids": [
+        "cohort_retention"
+      ],
+      "label_status": "pending_human_review",
+      "provenance": "Inherited authored development fixture; reference label not independently reviewed.",
+      "expected_rationale": null,
+      "status": "answered",
+      "abstention_reason": null,
+      "answer": "# Cohort Retention Metrics  Cohort retention groups users by start period and measures whether they return after 7, 14, or 30 days. [cohort_retention]",
+      "retrieved_sources": [
+        {
+          "doc_id": "cohort_retention",
+          "title": "Cohort Retention Metrics",
+          "score": 0.6980933076782695,
+          "snippet": "# Cohort Retention Metrics  Cohort retention groups users by start period and measures whether they return after 7, 14, or 30 days."
+        }
+      ],
+      "cited_sources": [
+        {
+          "doc_id": "cohort_retention",
+          "title": "Cohort Retention Metrics",
+          "score": 0.6980933076782695,
+          "snippet": "# Cohort Retention Metrics  Cohort retention groups users by start period and measures whether they return after 7, 14, or 30 days."
+        }
+      ],
+      "retrieval_top1_hit": true,
+      "retrieval_topk_hit": true,
+      "failure_reasons": [],
+      "semantic_support_verified": false
+    },
+    {
+      "question_id": "q13",
+      "question": "What schedules long-running GPU training jobs?",
+      "category": "original_answerable_fixture",
+      "expected_answerable": true,
+      "relevant_doc_ids": [
+        "slurm_training"
+      ],
+      "label_status": "pending_human_review",
+      "provenance": "Inherited authored development fixture; reference label not independently reviewed.",
+      "expected_rationale": null,
+      "status": "answered",
+      "abstention_reason": null,
+      "answer": "# SLURM Training Jobs  SLURM schedules research-compute jobs, allocates CPU or GPU resources, and captures logs for long-running model training. [slurm_training]",
+      "retrieved_sources": [
+        {
+          "doc_id": "slurm_training",
+          "title": "SLURM Training Jobs",
+          "score": 0.6102819283368373,
+          "snippet": "# SLURM Training Jobs  SLURM schedules research-compute jobs, allocates CPU or GPU resources, and captures logs for long-running model training."
+        },
+        {
+          "doc_id": "schema_migration",
+          "title": "Schema Migration",
+          "score": 0.06726047589959058,
+          "snippet": "# Schema Migration  Schema migrations apply controlled database changes and prevent breaking downstream analytics or inference jobs."
+        },
+        {
+          "doc_id": "data_drift",
+          "title": "Data Drift Detection",
+          "score": 0.051775104059348175,
+          "snippet": "# Data Drift Detection  Data drift checks compare live feature distributions with training data distributions to detect when a model may become unreliable."
+        }
+      ],
+      "cited_sources": [
+        {
+          "doc_id": "slurm_training",
+          "title": "SLURM Training Jobs",
+          "score": 0.6102819283368373,
+          "snippet": "# SLURM Training Jobs  SLURM schedules research-compute jobs, allocates CPU or GPU resources, and captures logs for long-running model training."
+        }
+      ],
+      "retrieval_top1_hit": true,
+      "retrieval_topk_hit": true,
+      "failure_reasons": [],
+      "semantic_support_verified": false
+    },
+    {
+      "question_id": "q14",
+      "question": "How does LoRA fine-tune a large language model efficiently?",
+      "category": "original_answerable_fixture",
+      "expected_answerable": true,
+      "relevant_doc_ids": [
+        "lora_adaptation"
+      ],
+      "label_status": "pending_human_review",
+      "provenance": "Inherited authored development fixture; reference label not independently reviewed.",
+      "expected_rationale": null,
+      "status": "answered",
+      "abstention_reason": null,
+      "answer": "# LoRA Adapter Fine-Tuning  LoRA fine-tuning trains low-rank adapter weights for large language models while keeping most base model parameters frozen. [lora_adaptation]",
+      "retrieved_sources": [
+        {
+          "doc_id": "lora_adaptation",
+          "title": "LoRA Adapter Fine-Tuning",
+          "score": 0.44920102928956956,
+          "snippet": "# LoRA Adapter Fine-Tuning  LoRA fine-tuning trains low-rank adapter weights for large language models while keeping most base model parameters frozen."
+        },
+        {
+          "doc_id": "model_registry",
+          "title": "Model Registry Governance",
+          "score": 0.038767476103202046,
+          "snippet": "# Model Registry Governance  A model registry stores approved model versions, signatures, metrics, owners, and deployment stages for controlled releases."
+        },
+        {
+          "doc_id": "data_lineage",
+          "title": "Data Lineage",
+          "score": 0.01311534496639707,
+          "snippet": "# Data Lineage  Data lineage records where datasets came from, how they changed, and which model or report used each version."
+        }
+      ],
+      "cited_sources": [
+        {
+          "doc_id": "lora_adaptation",
+          "title": "LoRA Adapter Fine-Tuning",
+          "score": 0.44920102928956956,
+          "snippet": "# LoRA Adapter Fine-Tuning  LoRA fine-tuning trains low-rank adapter weights for large language models while keeping most base model parameters frozen."
+        }
+      ],
+      "retrieval_top1_hit": true,
+      "retrieval_topk_hit": true,
+      "failure_reasons": [],
+      "semantic_support_verified": false
+    },
+    {
+      "question_id": "q15",
+      "question": "Why is macro-F1 useful for imbalanced classification labels?",
+      "category": "original_answerable_fixture",
+      "expected_answerable": true,
+      "relevant_doc_ids": [
+        "macro_f1"
+      ],
+      "label_status": "pending_human_review",
+      "provenance": "Inherited authored development fixture; reference label not independently reviewed.",
+      "expected_rationale": null,
+      "status": "answered",
+      "abstention_reason": null,
+      "answer": "# Macro-F1 Evaluation  Macro-F1 averages class-level F1 scores and is useful when labels are imbalanced across stance, sentiment, or classification tasks. [macro_f1]",
+      "retrieved_sources": [
+        {
+          "doc_id": "macro_f1",
+          "title": "Macro-F1 Evaluation",
+          "score": 0.6047726502987073,
+          "snippet": "# Macro-F1 Evaluation  Macro-F1 averages class-level F1 scores and is useful when labels are imbalanced across stance, sentiment, or classification tasks."
+        },
+        {
+          "doc_id": "mcc_metric",
+          "title": "Matthews Correlation Coefficient",
+          "score": 0.05655930184031795,
+          "snippet": "# Matthews Correlation Coefficient  MCC measures classification quality using true and false positives and negatives, staying informative under label imbalance."
+        }
+      ],
+      "cited_sources": [
+        {
+          "doc_id": "macro_f1",
+          "title": "Macro-F1 Evaluation",
+          "score": 0.6047726502987073,
+          "snippet": "# Macro-F1 Evaluation  Macro-F1 averages class-level F1 scores and is useful when labels are imbalanced across stance, sentiment, or classification tasks."
+        }
+      ],
+      "retrieval_top1_hit": true,
+      "retrieval_topk_hit": true,
+      "failure_reasons": [],
+      "semantic_support_verified": false
+    },
+    {
+      "question_id": "q16",
+      "question": "Which metric stays informative under label imbalance?",
+      "category": "original_answerable_fixture",
+      "expected_answerable": true,
+      "relevant_doc_ids": [
+        "mcc_metric"
+      ],
+      "label_status": "pending_human_review",
+      "provenance": "Inherited authored development fixture; reference label not independently reviewed.",
+      "expected_rationale": null,
+      "status": "answered",
+      "abstention_reason": null,
+      "answer": "# Matthews Correlation Coefficient  MCC measures classification quality using true and false positives and negatives, staying informative under label imbalance. [mcc_metric]",
+      "retrieved_sources": [
+        {
+          "doc_id": "mcc_metric",
+          "title": "Matthews Correlation Coefficient",
+          "score": 0.27767127809362663,
+          "snippet": "# Matthews Correlation Coefficient  MCC measures classification quality using true and false positives and negatives, staying informative under label imbalance."
+        },
+        {
+          "doc_id": "retrieval_at_k",
+          "title": "Retrieval@K Metric",
+          "score": 0.2641399686335605,
+          "snippet": "# Retrieval@K Metric  Retrieval@K measures whether the expected source document appears within the top K retrieved documents for a question."
+        }
+      ],
+      "cited_sources": [
+        {
+          "doc_id": "mcc_metric",
+          "title": "Matthews Correlation Coefficient",
+          "score": 0.27767127809362663,
+          "snippet": "# Matthews Correlation Coefficient  MCC measures classification quality using true and false positives and negatives, staying informative under label imbalance."
+        }
+      ],
+      "retrieval_top1_hit": true,
+      "retrieval_topk_hit": true,
+      "failure_reasons": [],
+      "semantic_support_verified": false
+    },
+    {
+      "question_id": "q17",
+      "question": "What audits confident but wrong model predictions?",
+      "category": "original_answerable_fixture",
+      "expected_answerable": true,
+      "relevant_doc_ids": [
+        "high_confidence_error"
+      ],
+      "label_status": "pending_human_review",
+      "provenance": "Inherited authored development fixture; reference label not independently reviewed.",
+      "expected_rationale": null,
+      "status": "answered",
+      "abstention_reason": null,
+      "answer": "# High-Confidence Error Auditing  High-confidence error auditing reviews cases where a model is confident but wrong to identify systematic failure modes. [high_confidence_error]",
+      "retrieved_sources": [
+        {
+          "doc_id": "high_confidence_error",
+          "title": "High-Confidence Error Auditing",
+          "score": 0.2237860159888634,
+          "snippet": "# High-Confidence Error Auditing  High-confidence error auditing reviews cases where a model is confident but wrong to identify systematic failure modes."
+        },
+        {
+          "doc_id": "incident_response",
+          "title": "ML Incident Response",
+          "score": 0.06118599729451701,
+          "snippet": "# ML Incident Response  ML incident response defines triage steps for bad predictions, latency spikes, data drift, and failed deployments."
+        },
+        {
+          "doc_id": "online_inference",
+          "title": "Online Inference API",
+          "score": 0.06075750322548318,
+          "snippet": "# Online Inference API  Online inference serves predictions through low-latency endpoints with request validation, error handling, and structured logs."
+        }
+      ],
+      "cited_sources": [
+        {
+          "doc_id": "high_confidence_error",
+          "title": "High-Confidence Error Auditing",
+          "score": 0.2237860159888634,
+          "snippet": "# High-Confidence Error Auditing  High-confidence error auditing reviews cases where a model is confident but wrong to identify systematic failure modes."
+        }
+      ],
+      "retrieval_top1_hit": true,
+      "retrieval_topk_hit": true,
+      "failure_reasons": [],
+      "semantic_support_verified": false
+    },
+    {
+      "question_id": "q18",
+      "question": "How do you defend a RAG system from prompt injection?",
+      "category": "original_answerable_fixture",
+      "expected_answerable": true,
+      "relevant_doc_ids": [
+        "prompt_injection"
+      ],
+      "label_status": "pending_human_review",
+      "provenance": "Inherited authored development fixture; reference label not independently reviewed.",
+      "expected_rationale": null,
+      "status": "answered",
+      "abstention_reason": null,
+      "answer": "# Prompt Injection Defense  Prompt injection defense separates system instructions from retrieved content and filters untrusted instructions before generation. [prompt_injection]",
+      "retrieved_sources": [
+        {
+          "doc_id": "prompt_injection",
+          "title": "Prompt Injection Defense",
+          "score": 0.5972893419588267,
+          "snippet": "# Prompt Injection Defense  Prompt injection defense separates system instructions from retrieved content and filters untrusted instructions before generation."
+        },
+        {
+          "doc_id": "rag_citations",
+          "title": "RAG Citation Policy",
+          "score": 0.19652784097403328,
+          "snippet": "# RAG Citation Policy  Retrieval augmented generation should return source citations, document identifiers, and quoted evidence so users can audit generated answers."
+        },
+        {
+          "doc_id": "retrieval_at_k",
+          "title": "Retrieval@K Metric",
+          "score": 0.06047251707187892,
+          "snippet": "Retrieval at K is the main metric for checking if a RAG retriever found the right evidence."
+        }
+      ],
+      "cited_sources": [
+        {
+          "doc_id": "prompt_injection",
+          "title": "Prompt Injection Defense",
+          "score": 0.5972893419588267,
+          "snippet": "# Prompt Injection Defense  Prompt injection defense separates system instructions from retrieved content and filters untrusted instructions before generation."
+        }
+      ],
+      "retrieval_top1_hit": true,
+      "retrieval_topk_hit": true,
+      "failure_reasons": [],
+      "semantic_support_verified": false
+    },
+    {
+      "question_id": "q19",
+      "question": "What should be removed before text is logged or sent to a model?",
+      "category": "original_answerable_fixture",
+      "expected_answerable": true,
+      "relevant_doc_ids": [
+        "pii_redaction"
+      ],
+      "label_status": "pending_human_review",
+      "provenance": "Inherited authored development fixture; reference label not independently reviewed.",
+      "expected_rationale": null,
+      "status": "answered",
+      "abstention_reason": null,
+      "answer": "# PII Redaction  PII redaction removes names, emails, phone numbers, addresses, and identifiers before text is logged or sent to a model. [pii_redaction]",
+      "retrieved_sources": [
+        {
+          "doc_id": "pii_redaction",
+          "title": "PII Redaction",
+          "score": 0.26063128309295897,
+          "snippet": "# PII Redaction  PII redaction removes names, emails, phone numbers, addresses, and identifiers before text is logged or sent to a model."
+        },
+        {
+          "doc_id": "rag_citations",
+          "title": "RAG Citation Policy",
+          "score": 0.06712605444916603,
+          "snippet": "# RAG Citation Policy  Retrieval augmented generation should return source citations, document identifiers, and quoted evidence so users can audit generated answers."
+        },
+        {
+          "doc_id": "evaluation_dataset",
+          "title": "Evaluation Dataset Design",
+          "score": 0.0643849053677239,
+          "snippet": "# Evaluation Dataset Design  Evaluation datasets should include expected answers, expected source documents, negative cases, and stable IDs for repeatable scoring."
+        }
+      ],
+      "cited_sources": [
+        {
+          "doc_id": "pii_redaction",
+          "title": "PII Redaction",
+          "score": 0.26063128309295897,
+          "snippet": "# PII Redaction  PII redaction removes names, emails, phone numbers, addresses, and identifiers before text is logged or sent to a model."
+        }
+      ],
+      "retrieval_top1_hit": true,
+      "retrieval_topk_hit": true,
+      "failure_reasons": [],
+      "semantic_support_verified": false
+    },
+    {
+      "question_id": "q20",
+      "question": "What does Retrieval@K measure in RAG evaluation?",
+      "category": "original_answerable_fixture",
+      "expected_answerable": true,
+      "relevant_doc_ids": [
+        "retrieval_at_k"
+      ],
+      "label_status": "pending_human_review",
+      "provenance": "Inherited authored development fixture; reference label not independently reviewed.",
+      "expected_rationale": null,
+      "status": "answered",
+      "abstention_reason": null,
+      "answer": "Retrieval at K is the main metric for checking if a RAG retriever found the right evidence. [retrieval_at_k] # RAG Citation Policy  Retrieval augmented generation should return source citations, document identifiers, and quoted evidence so users can audit generated answers. [rag_citations]",
+      "retrieved_sources": [
+        {
+          "doc_id": "retrieval_at_k",
+          "title": "Retrieval@K Metric",
+          "score": 0.34975677422434104,
+          "snippet": "Retrieval at K is the main metric for checking if a RAG retriever found the right evidence."
+        },
+        {
+          "doc_id": "rag_citations",
+          "title": "RAG Citation Policy",
+          "score": 0.3303006960718269,
+          "snippet": "# RAG Citation Policy  Retrieval augmented generation should return source citations, document identifiers, and quoted evidence so users can audit generated answers."
+        },
+        {
+          "doc_id": "evaluation_dataset",
+          "title": "Evaluation Dataset Design",
+          "score": 0.29220148612849123,
+          "snippet": "# Evaluation Dataset Design  Evaluation datasets should include expected answers, expected source documents, negative cases, and stable IDs for repeatable scoring."
+        }
+      ],
+      "cited_sources": [
+        {
+          "doc_id": "retrieval_at_k",
+          "title": "Retrieval@K Metric",
+          "score": 0.34975677422434104,
+          "snippet": "Retrieval at K is the main metric for checking if a RAG retriever found the right evidence."
+        },
+        {
+          "doc_id": "rag_citations",
+          "title": "RAG Citation Policy",
+          "score": 0.3303006960718269,
+          "snippet": "# RAG Citation Policy  Retrieval augmented generation should return source citations, document identifiers, and quoted evidence so users can audit generated answers."
+        }
+      ],
+      "retrieval_top1_hit": true,
+      "retrieval_topk_hit": true,
+      "failure_reasons": [
+        "cited_source_not_in_provisional_relevance_labels"
+      ],
+      "semantic_support_verified": false
+    },
+    {
+      "question_id": "dev-a01",
+      "question": "What should evaluation datasets include for repeatable scoring?",
+      "category": "additional_answerable",
+      "expected_answerable": true,
+      "relevant_doc_ids": [
+        "evaluation_dataset"
+      ],
+      "label_status": "pending_human_review",
+      "provenance": "Authored development fixture based on the included synthetic corpus; not human-reviewed, not locked evaluation, and not a model-generated reference answer.",
+      "expected_rationale": "The named corpus document states the requested definition or mechanism.",
+      "status": "answered",
+      "abstention_reason": null,
+      "answer": "# Evaluation Dataset Design  Evaluation datasets should include expected answers, expected source documents, negative cases, and stable IDs for repeatable scoring. [evaluation_dataset]",
+      "retrieved_sources": [
+        {
+          "doc_id": "evaluation_dataset",
+          "title": "Evaluation Dataset Design",
+          "score": 0.4835113798760853,
+          "snippet": "# Evaluation Dataset Design  Evaluation datasets should include expected answers, expected source documents, negative cases, and stable IDs for repeatable scoring."
+        },
+        {
+          "doc_id": "faithfulness_eval",
+          "title": "Answer Faithfulness Evaluation",
+          "score": 0.17777457370258434,
+          "snippet": "# Answer Faithfulness Evaluation  Faithfulness evaluation checks whether generated answers are supported by retrieved evidence rather than unsupported model guesses."
+        },
+        {
+          "doc_id": "macro_f1",
+          "title": "Macro-F1 Evaluation",
+          "score": 0.15038645750407068,
+          "snippet": "# Macro-F1 Evaluation  Macro-F1 averages class-level F1 scores and is useful when labels are imbalanced across stance, sentiment, or classification tasks."
+        }
+      ],
+      "cited_sources": [
+        {
+          "doc_id": "evaluation_dataset",
+          "title": "Evaluation Dataset Design",
+          "score": 0.4835113798760853,
+          "snippet": "# Evaluation Dataset Design  Evaluation datasets should include expected answers, expected source documents, negative cases, and stable IDs for repeatable scoring."
+        }
+      ],
+      "retrieval_top1_hit": true,
+      "retrieval_topk_hit": true,
+      "failure_reasons": [],
+      "semantic_support_verified": false
+    },
+    {
+      "question_id": "dev-a02",
+      "question": "Which checks can GitHub Actions run on every pull request?",
+      "category": "additional_answerable",
+      "expected_answerable": true,
+      "relevant_doc_ids": [
+        "github_actions"
+      ],
+      "label_status": "pending_human_review",
+      "provenance": "Authored development fixture based on the included synthetic corpus; not human-reviewed, not locked evaluation, and not a model-generated reference answer.",
+      "expected_rationale": "The named corpus document states the requested definition or mechanism.",
+      "status": "answered",
+      "abstention_reason": null,
+      "answer": "# GitHub Actions CI  GitHub Actions can run tests, linting, and smoke checks on every pull request before deployment. [github_actions]",
+      "retrieved_sources": [
+        {
+          "doc_id": "github_actions",
+          "title": "GitHub Actions CI",
+          "score": 0.6898697677639621,
+          "snippet": "# GitHub Actions CI  GitHub Actions can run tests, linting, and smoke checks on every pull request before deployment."
+        },
+        {
+          "doc_id": "structured_logging",
+          "title": "Structured Logging",
+          "score": 0.04471446420937815,
+          "snippet": "# Structured Logging  Structured logs capture request IDs, latency, endpoint names, and error types for debugging deployed ML services."
+        },
+        {
+          "doc_id": "online_inference",
+          "title": "Online Inference API",
+          "score": 0.04076232755550437,
+          "snippet": "# Online Inference API  Online inference serves predictions through low-latency endpoints with request validation, error handling, and structured logs."
+        }
+      ],
+      "cited_sources": [
+        {
+          "doc_id": "github_actions",
+          "title": "GitHub Actions CI",
+          "score": 0.6898697677639621,
+          "snippet": "# GitHub Actions CI  GitHub Actions can run tests, linting, and smoke checks on every pull request before deployment."
+        }
+      ],
+      "retrieval_top1_hit": true,
+      "retrieval_topk_hit": true,
+      "failure_reasons": [],
+      "semantic_support_verified": false
+    },
+    {
+      "question_id": "dev-a03",
+      "question": "What should unit tests validate before code reaches production?",
+      "category": "additional_answerable",
+      "expected_answerable": true,
+      "relevant_doc_ids": [
+        "unit_tests"
+      ],
+      "label_status": "pending_human_review",
+      "provenance": "Authored development fixture based on the included synthetic corpus; not human-reviewed, not locked evaluation, and not a model-generated reference answer.",
+      "expected_rationale": "The named corpus document states the requested definition or mechanism.",
+      "status": "answered",
+      "abstention_reason": null,
+      "answer": "# Unit Test Coverage  Unit tests validate retrieval ranking, API response shape, schema validation, and edge cases before code reaches production. [unit_tests]",
+      "retrieved_sources": [
+        {
+          "doc_id": "unit_tests",
+          "title": "Unit Test Coverage",
+          "score": 0.5566912037699107,
+          "snippet": "# Unit Test Coverage  Unit tests validate retrieval ranking, API response shape, schema validation, and edge cases before code reaches production."
+        },
+        {
+          "doc_id": "github_actions",
+          "title": "GitHub Actions CI",
+          "score": 0.06384498351729483,
+          "snippet": "# GitHub Actions CI  GitHub Actions can run tests, linting, and smoke checks on every pull request before deployment."
+        },
+        {
+          "doc_id": "rag_citations",
+          "title": "RAG Citation Policy",
+          "score": 0.04825413920874142,
+          "snippet": "# RAG Citation Policy  Retrieval augmented generation should return source citations, document identifiers, and quoted evidence so users can audit generated answers."
+        }
+      ],
+      "cited_sources": [
+        {
+          "doc_id": "unit_tests",
+          "title": "Unit Test Coverage",
+          "score": 0.5566912037699107,
+          "snippet": "# Unit Test Coverage  Unit tests validate retrieval ranking, API response shape, schema validation, and edge cases before code reaches production."
+        }
+      ],
+      "retrieval_top1_hit": true,
+      "retrieval_topk_hit": true,
+      "failure_reasons": [],
+      "semantic_support_verified": false
+    },
+    {
+      "question_id": "dev-a04",
+      "question": "Which debugging fields are captured in structured logs?",
+      "category": "additional_answerable",
+      "expected_answerable": true,
+      "relevant_doc_ids": [
+        "structured_logging"
+      ],
+      "label_status": "pending_human_review",
+      "provenance": "Authored development fixture based on the included synthetic corpus; not human-reviewed, not locked evaluation, and not a model-generated reference answer.",
+      "expected_rationale": "The named corpus document states the requested definition or mechanism.",
+      "status": "answered",
+      "abstention_reason": null,
+      "answer": "# Structured Logging  Structured logs capture request IDs, latency, endpoint names, and error types for debugging deployed ML services. [structured_logging] # Online Inference API  Online inference serves predictions through low-latency endpoints with request validation, error handling, and structured logs. [online_inference]",
+      "retrieved_sources": [
+        {
+          "doc_id": "structured_logging",
+          "title": "Structured Logging",
+          "score": 0.5405208193635174,
+          "snippet": "# Structured Logging  Structured logs capture request IDs, latency, endpoint names, and error types for debugging deployed ML services."
+        },
+        {
+          "doc_id": "online_inference",
+          "title": "Online Inference API",
+          "score": 0.14868291418751434,
+          "snippet": "# Online Inference API  Online inference serves predictions through low-latency endpoints with request validation, error handling, and structured logs."
+        },
+        {
+          "doc_id": "slurm_training",
+          "title": "SLURM Training Jobs",
+          "score": 0.05935576604338919,
+          "snippet": "# SLURM Training Jobs  SLURM schedules research-compute jobs, allocates CPU or GPU resources, and captures logs for long-running model training."
+        }
+      ],
+      "cited_sources": [
+        {
+          "doc_id": "structured_logging",
+          "title": "Structured Logging",
+          "score": 0.5405208193635174,
+          "snippet": "# Structured Logging  Structured logs capture request IDs, latency, endpoint names, and error types for debugging deployed ML services."
+        },
+        {
+          "doc_id": "online_inference",
+          "title": "Online Inference API",
+          "score": 0.14868291418751434,
+          "snippet": "# Online Inference API  Online inference serves predictions through low-latency endpoints with request validation, error handling, and structured logs."
+        }
+      ],
+      "retrieval_top1_hit": true,
+      "retrieval_topk_hit": true,
+      "failure_reasons": [
+        "cited_source_not_in_provisional_relevance_labels"
+      ],
+      "semantic_support_verified": false
+    },
+    {
+      "question_id": "dev-a05",
+      "question": "Why cache repeated retrieval results for common questions?",
+      "category": "additional_answerable",
+      "expected_answerable": true,
+      "relevant_doc_ids": [
+        "cache_layer"
+      ],
+      "label_status": "pending_human_review",
+      "provenance": "Authored development fixture based on the included synthetic corpus; not human-reviewed, not locked evaluation, and not a model-generated reference answer.",
+      "expected_rationale": "The named corpus document states the requested definition or mechanism.",
+      "status": "answered",
+      "abstention_reason": null,
+      "answer": "# Caching Layer  Caching repeated retrieval results reduces latency and cost for common questions in high-traffic AI applications. [cache_layer]",
+      "retrieved_sources": [
+        {
+          "doc_id": "cache_layer",
+          "title": "Caching Layer",
+          "score": 0.3531957055350331,
+          "snippet": "# Caching Layer  Caching repeated retrieval results reduces latency and cost for common questions in high-traffic AI applications."
+        },
+        {
+          "doc_id": "retrieval_at_k",
+          "title": "Retrieval@K Metric",
+          "score": 0.17589975991880966,
+          "snippet": "# Retrieval@K Metric  Retrieval@K measures whether the expected source document appears within the top K retrieved documents for a question."
+        },
+        {
+          "doc_id": "vector_search",
+          "title": "Vector Search Retrieval",
+          "score": 0.10400591808322786,
+          "snippet": "# Vector Search Retrieval  Vector search ranks documents by embedding or sparse-vector similarity and returns top-k context passages for answer generation."
+        }
+      ],
+      "cited_sources": [
+        {
+          "doc_id": "cache_layer",
+          "title": "Caching Layer",
+          "score": 0.3531957055350331,
+          "snippet": "# Caching Layer  Caching repeated retrieval results reduces latency and cost for common questions in high-traffic AI applications."
+        }
+      ],
+      "retrieval_top1_hit": true,
+      "retrieval_topk_hit": true,
+      "failure_reasons": [],
+      "semantic_support_verified": false
+    },
+    {
+      "question_id": "dev-a06",
+      "question": "How does document chunking make long files retrievable?",
+      "category": "additional_answerable",
+      "expected_answerable": true,
+      "relevant_doc_ids": [
+        "document_chunking"
+      ],
+      "label_status": "pending_human_review",
+      "provenance": "Authored development fixture based on the included synthetic corpus; not human-reviewed, not locked evaluation, and not a model-generated reference answer.",
+      "expected_rationale": "The named corpus document states the requested definition or mechanism.",
+      "status": "answered",
+      "abstention_reason": null,
+      "answer": "# Document Chunking  Document chunking splits long files into retrievable passages while preserving enough context for source-grounded answers. [document_chunking]",
+      "retrieved_sources": [
+        {
+          "doc_id": "document_chunking",
+          "title": "Document Chunking",
+          "score": 0.7291804463051846,
+          "snippet": "# Document Chunking  Document chunking splits long files into retrievable passages while preserving enough context for source-grounded answers."
+        },
+        {
+          "doc_id": "rag_citations",
+          "title": "RAG Citation Policy",
+          "score": 0.049505139643742285,
+          "snippet": "# RAG Citation Policy  Retrieval augmented generation should return source citations, document identifiers, and quoted evidence so users can audit generated answers."
+        },
+        {
+          "doc_id": "retrieval_at_k",
+          "title": "Retrieval@K Metric",
+          "score": 0.04569887483749702,
+          "snippet": "# Retrieval@K Metric  Retrieval@K measures whether the expected source document appears within the top K retrieved documents for a question."
+        }
+      ],
+      "cited_sources": [
+        {
+          "doc_id": "document_chunking",
+          "title": "Document Chunking",
+          "score": 0.7291804463051846,
+          "snippet": "# Document Chunking  Document chunking splits long files into retrievable passages while preserving enough context for source-grounded answers."
+        }
+      ],
+      "retrieval_top1_hit": true,
+      "retrieval_topk_hit": true,
+      "failure_reasons": [],
+      "semantic_support_verified": false
+    },
+    {
+      "question_id": "dev-a07",
+      "question": "What does faithfulness evaluation check about generated answers?",
+      "category": "additional_answerable",
+      "expected_answerable": true,
+      "relevant_doc_ids": [
+        "faithfulness_eval"
+      ],
+      "label_status": "pending_human_review",
+      "provenance": "Authored development fixture based on the included synthetic corpus; not human-reviewed, not locked evaluation, and not a model-generated reference answer.",
+      "expected_rationale": "The named corpus document states the requested definition or mechanism.",
+      "status": "answered",
+      "abstention_reason": null,
+      "answer": "# Answer Faithfulness Evaluation  Faithfulness evaluation checks whether generated answers are supported by retrieved evidence rather than unsupported model guesses. [faithfulness_eval]",
+      "retrieved_sources": [
+        {
+          "doc_id": "faithfulness_eval",
+          "title": "Answer Faithfulness Evaluation",
+          "score": 0.602918500796938,
+          "snippet": "# Answer Faithfulness Evaluation  Faithfulness evaluation checks whether generated answers are supported by retrieved evidence rather than unsupported model guesses."
+        },
+        {
+          "doc_id": "evaluation_dataset",
+          "title": "Evaluation Dataset Design",
+          "score": 0.24806773421199674,
+          "snippet": "# Evaluation Dataset Design  Evaluation datasets should include expected answers, expected source documents, negative cases, and stable IDs for repeatable scoring."
+        },
+        {
+          "doc_id": "macro_f1",
+          "title": "Macro-F1 Evaluation",
+          "score": 0.16949147565041248,
+          "snippet": "# Macro-F1 Evaluation  Macro-F1 averages class-level F1 scores and is useful when labels are imbalanced across stance, sentiment, or classification tasks."
+        }
+      ],
+      "cited_sources": [
+        {
+          "doc_id": "faithfulness_eval",
+          "title": "Answer Faithfulness Evaluation",
+          "score": 0.602918500796938,
+          "snippet": "# Answer Faithfulness Evaluation  Faithfulness evaluation checks whether generated answers are supported by retrieved evidence rather than unsupported model guesses."
+        }
+      ],
+      "retrieval_top1_hit": true,
+      "retrieval_topk_hit": true,
+      "failure_reasons": [],
+      "semantic_support_verified": false
+    },
+    {
+      "question_id": "dev-a08",
+      "question": "What belongs in a cloud deployment runbook?",
+      "category": "additional_answerable",
+      "expected_answerable": true,
+      "relevant_doc_ids": [
+        "cloud_runbook"
+      ],
+      "label_status": "pending_human_review",
+      "provenance": "Authored development fixture based on the included synthetic corpus; not human-reviewed, not locked evaluation, and not a model-generated reference answer.",
+      "expected_rationale": "The named corpus document states the requested definition or mechanism.",
+      "status": "answered",
+      "abstention_reason": null,
+      "answer": "# Cloud Deployment Runbook  A deployment runbook documents build commands, environment variables, rollback steps, and health checks for cloud services. [cloud_runbook] # Dockerized FastAPI Deployment  Docker packages a FastAPI model service with pinned dependencies, a health check, and a stable uvicorn startup command for cloud deployment. [docker_fastapi]",
+      "retrieved_sources": [
+        {
+          "doc_id": "cloud_runbook",
+          "title": "Cloud Deployment Runbook",
+          "score": 0.8936148220897616,
+          "snippet": "# Cloud Deployment Runbook  A deployment runbook documents build commands, environment variables, rollback steps, and health checks for cloud services."
+        },
+        {
+          "doc_id": "docker_fastapi",
+          "title": "Dockerized FastAPI Deployment",
+          "score": 0.2941805357190735,
+          "snippet": "# Dockerized FastAPI Deployment  Docker packages a FastAPI model service with pinned dependencies, a health check, and a stable uvicorn startup command for cloud deployment."
+        },
+        {
+          "doc_id": "model_registry",
+          "title": "Model Registry Governance",
+          "score": 0.06123013333693557,
+          "snippet": "# Model Registry Governance  A model registry stores approved model versions, signatures, metrics, owners, and deployment stages for controlled releases."
+        }
+      ],
+      "cited_sources": [
+        {
+          "doc_id": "cloud_runbook",
+          "title": "Cloud Deployment Runbook",
+          "score": 0.8936148220897616,
+          "snippet": "# Cloud Deployment Runbook  A deployment runbook documents build commands, environment variables, rollback steps, and health checks for cloud services."
+        },
+        {
+          "doc_id": "docker_fastapi",
+          "title": "Dockerized FastAPI Deployment",
+          "score": 0.2941805357190735,
+          "snippet": "# Dockerized FastAPI Deployment  Docker packages a FastAPI model service with pinned dependencies, a health check, and a stable uvicorn startup command for cloud deployment."
+        }
+      ],
+      "retrieval_top1_hit": true,
+      "retrieval_topk_hit": true,
+      "failure_reasons": [
+        "cited_source_not_in_provisional_relevance_labels"
+      ],
+      "semantic_support_verified": false
+    },
+    {
+      "question_id": "dev-a09",
+      "question": "How does data lineage track datasets and versions?",
+      "category": "additional_answerable",
+      "expected_answerable": true,
+      "relevant_doc_ids": [
+        "data_lineage"
+      ],
+      "label_status": "pending_human_review",
+      "provenance": "Authored development fixture based on the included synthetic corpus; not human-reviewed, not locked evaluation, and not a model-generated reference answer.",
+      "expected_rationale": "The named corpus document states the requested definition or mechanism.",
+      "status": "answered",
+      "abstention_reason": null,
+      "answer": "# Data Lineage  Data lineage records where datasets came from, how they changed, and which model or report used each version. [data_lineage]",
+      "retrieved_sources": [
+        {
+          "doc_id": "data_lineage",
+          "title": "Data Lineage",
+          "score": 0.6891946098654639,
+          "snippet": "# Data Lineage  Data lineage records where datasets came from, how they changed, and which model or report used each version."
+        },
+        {
+          "doc_id": "data_drift",
+          "title": "Data Drift Detection",
+          "score": 0.26260057584199953,
+          "snippet": "# Data Drift Detection  Data drift checks compare live feature distributions with training data distributions to detect when a model may become unreliable."
+        },
+        {
+          "doc_id": "model_registry",
+          "title": "Model Registry Governance",
+          "score": 0.07380468946294895,
+          "snippet": "# Model Registry Governance  A model registry stores approved model versions, signatures, metrics, owners, and deployment stages for controlled releases."
+        }
+      ],
+      "cited_sources": [
+        {
+          "doc_id": "data_lineage",
+          "title": "Data Lineage",
+          "score": 0.6891946098654639,
+          "snippet": "# Data Lineage  Data lineage records where datasets came from, how they changed, and which model or report used each version."
+        }
+      ],
+      "retrieval_top1_hit": true,
+      "retrieval_topk_hit": true,
+      "failure_reasons": [],
+      "semantic_support_verified": false
+    },
+    {
+      "question_id": "dev-a10",
+      "question": "Why apply controlled schema migrations to a database?",
+      "category": "additional_answerable",
+      "expected_answerable": true,
+      "relevant_doc_ids": [
+        "schema_migration"
+      ],
+      "label_status": "pending_human_review",
+      "provenance": "Authored development fixture based on the included synthetic corpus; not human-reviewed, not locked evaluation, and not a model-generated reference answer.",
+      "expected_rationale": "The named corpus document states the requested definition or mechanism.",
+      "status": "answered",
+      "abstention_reason": null,
+      "answer": "# Schema Migration  Schema migrations apply controlled database changes and prevent breaking downstream analytics or inference jobs. [schema_migration]",
+      "retrieved_sources": [
+        {
+          "doc_id": "schema_migration",
+          "title": "Schema Migration",
+          "score": 0.5533316614505742,
+          "snippet": "# Schema Migration  Schema migrations apply controlled database changes and prevent breaking downstream analytics or inference jobs."
+        },
+        {
+          "doc_id": "model_registry",
+          "title": "Model Registry Governance",
+          "score": 0.061836101402430586,
+          "snippet": "# Model Registry Governance  A model registry stores approved model versions, signatures, metrics, owners, and deployment stages for controlled releases."
+        },
+        {
+          "doc_id": "unit_tests",
+          "title": "Unit Test Coverage",
+          "score": 0.0506441247743697,
+          "snippet": "# Unit Test Coverage  Unit tests validate retrieval ranking, API response shape, schema validation, and edge cases before code reaches production."
+        }
+      ],
+      "cited_sources": [
+        {
+          "doc_id": "schema_migration",
+          "title": "Schema Migration",
+          "score": 0.5533316614505742,
+          "snippet": "# Schema Migration  Schema migrations apply controlled database changes and prevent breaking downstream analytics or inference jobs."
+        }
+      ],
+      "retrieval_top1_hit": true,
+      "retrieval_topk_hit": true,
+      "failure_reasons": [],
+      "semantic_support_verified": false
+    },
+    {
+      "question_id": "dev-a11",
+      "question": "How does rate limiting protect public APIs?",
+      "category": "additional_answerable",
+      "expected_answerable": true,
+      "relevant_doc_ids": [
+        "rate_limiting"
+      ],
+      "label_status": "pending_human_review",
+      "provenance": "Authored development fixture based on the included synthetic corpus; not human-reviewed, not locked evaluation, and not a model-generated reference answer.",
+      "expected_rationale": "The named corpus document states the requested definition or mechanism.",
+      "status": "answered",
+      "abstention_reason": null,
+      "answer": "# API Rate Limiting  Rate limiting protects public APIs from abusive traffic and keeps inference costs predictable. [rate_limiting]",
+      "retrieved_sources": [
+        {
+          "doc_id": "rate_limiting",
+          "title": "API Rate Limiting",
+          "score": 0.7370668485723288,
+          "snippet": "# API Rate Limiting  Rate limiting protects public APIs from abusive traffic and keeps inference costs predictable."
+        },
+        {
+          "doc_id": "latency_monitoring",
+          "title": "API Latency Monitoring",
+          "score": 0.06157865233290412,
+          "snippet": "# API Latency Monitoring  Latency monitoring tracks average, p95, and p99 response time so deployed model APIs can be debugged before users notice slowdowns."
+        }
+      ],
+      "cited_sources": [
+        {
+          "doc_id": "rate_limiting",
+          "title": "API Rate Limiting",
+          "score": 0.7370668485723288,
+          "snippet": "# API Rate Limiting  Rate limiting protects public APIs from abusive traffic and keeps inference costs predictable."
+        }
+      ],
+      "retrieval_top1_hit": true,
+      "retrieval_topk_hit": true,
+      "failure_reasons": [],
+      "semantic_support_verified": false
+    },
+    {
+      "question_id": "dev-a12",
+      "question": "Which failures need ML incident response triage?",
+      "category": "additional_answerable",
+      "expected_answerable": true,
+      "relevant_doc_ids": [
+        "incident_response"
+      ],
+      "label_status": "pending_human_review",
+      "provenance": "Authored development fixture based on the included synthetic corpus; not human-reviewed, not locked evaluation, and not a model-generated reference answer.",
+      "expected_rationale": "The named corpus document states the requested definition or mechanism.",
+      "status": "answered",
+      "abstention_reason": null,
+      "answer": "# ML Incident Response  ML incident response defines triage steps for bad predictions, latency spikes, data drift, and failed deployments. [incident_response]",
+      "retrieved_sources": [
+        {
+          "doc_id": "incident_response",
+          "title": "ML Incident Response",
+          "score": 0.7771280470467385,
+          "snippet": "# ML Incident Response  ML incident response defines triage steps for bad predictions, latency spikes, data drift, and failed deployments."
+        },
+        {
+          "doc_id": "unit_tests",
+          "title": "Unit Test Coverage",
+          "score": 0.07137554624625402,
+          "snippet": "# Unit Test Coverage  Unit tests validate retrieval ranking, API response shape, schema validation, and edge cases before code reaches production."
+        },
+        {
+          "doc_id": "latency_monitoring",
+          "title": "API Latency Monitoring",
+          "score": 0.06704945090104303,
+          "snippet": "# API Latency Monitoring  Latency monitoring tracks average, p95, and p99 response time so deployed model APIs can be debugged before users notice slowdowns."
+        }
+      ],
+      "cited_sources": [
+        {
+          "doc_id": "incident_response",
+          "title": "ML Incident Response",
+          "score": 0.7771280470467385,
+          "snippet": "# ML Incident Response  ML incident response defines triage steps for bad predictions, latency spikes, data drift, and failed deployments."
+        }
+      ],
+      "retrieval_top1_hit": true,
+      "retrieval_topk_hit": true,
+      "failure_reasons": [],
+      "semantic_support_verified": false
+    },
+    {
+      "question_id": "dev-overlap01",
+      "question": "What exact p95 latency did this model API achieve yesterday?",
+      "category": "overlapping_vocabulary_unanswerable",
+      "expected_answerable": false,
+      "relevant_doc_ids": [],
+      "label_status": "pending_human_review",
+      "provenance": "Authored development fixture based on the included synthetic corpus; not human-reviewed, not locked evaluation, and not a model-generated reference answer.",
+      "expected_rationale": "The latency note defines measurements but provides no dated observations.",
+      "status": "answered",
+      "abstention_reason": null,
+      "answer": "# API Latency Monitoring  Latency monitoring tracks average, p95, and p99 response time so deployed model APIs can be debugged before users notice slowdowns. [latency_monitoring]",
+      "retrieved_sources": [
+        {
+          "doc_id": "latency_monitoring",
+          "title": "API Latency Monitoring",
+          "score": 0.5217211102419459,
+          "snippet": "# API Latency Monitoring  Latency monitoring tracks average, p95, and p99 response time so deployed model APIs can be debugged before users notice slowdowns."
+        },
+        {
+          "doc_id": "online_inference",
+          "title": "Online Inference API",
+          "score": 0.19201926906146605,
+          "snippet": "Operational note: Online Inference API supports reliable ML engineering workflows by making model behavior easier to test, deploy, monitor, and explain."
+        },
+        {
+          "doc_id": "rate_limiting",
+          "title": "API Rate Limiting",
+          "score": 0.17682824413712112,
+          "snippet": "Operational note: API Rate Limiting supports reliable ML engineering workflows by making model behavior easier to test, deploy, monitor, and explain."
+        }
+      ],
+      "cited_sources": [
+        {
+          "doc_id": "latency_monitoring",
+          "title": "API Latency Monitoring",
+          "score": 0.5217211102419459,
+          "snippet": "# API Latency Monitoring  Latency monitoring tracks average, p95, and p99 response time so deployed model APIs can be debugged before users notice slowdowns."
+        }
+      ],
+      "retrieval_top1_hit": null,
+      "retrieval_topk_hit": null,
+      "failure_reasons": [
+        "answered_unanswerable_case",
+        "cited_source_not_in_provisional_relevance_labels"
+      ],
+      "semantic_support_verified": false
+    },
+    {
+      "question_id": "dev-overlap02",
+      "question": "What dollar cost did SLURM GPU training incur last month?",
+      "category": "overlapping_vocabulary_unanswerable",
+      "expected_answerable": false,
+      "relevant_doc_ids": [],
+      "label_status": "pending_human_review",
+      "provenance": "Authored development fixture based on the included synthetic corpus; not human-reviewed, not locked evaluation, and not a model-generated reference answer.",
+      "expected_rationale": "The SLURM note explains scheduling but contains no expenditure records.",
+      "status": "answered",
+      "abstention_reason": null,
+      "answer": "# SLURM Training Jobs  SLURM schedules research-compute jobs, allocates CPU or GPU resources, and captures logs for long-running model training. [slurm_training]",
+      "retrieved_sources": [
+        {
+          "doc_id": "slurm_training",
+          "title": "SLURM Training Jobs",
+          "score": 0.5860393049073928,
+          "snippet": "# SLURM Training Jobs  SLURM schedules research-compute jobs, allocates CPU or GPU resources, and captures logs for long-running model training."
+        },
+        {
+          "doc_id": "cache_layer",
+          "title": "Caching Layer",
+          "score": 0.08537814701819828,
+          "snippet": "# Caching Layer  Caching repeated retrieval results reduces latency and cost for common questions in high-traffic AI applications."
+        },
+        {
+          "doc_id": "data_drift",
+          "title": "Data Drift Detection",
+          "score": 0.05695595556149179,
+          "snippet": "# Data Drift Detection  Data drift checks compare live feature distributions with training data distributions to detect when a model may become unreliable."
+        }
+      ],
+      "cited_sources": [
+        {
+          "doc_id": "slurm_training",
+          "title": "SLURM Training Jobs",
+          "score": 0.5860393049073928,
+          "snippet": "# SLURM Training Jobs  SLURM schedules research-compute jobs, allocates CPU or GPU resources, and captures logs for long-running model training."
+        }
+      ],
+      "retrieval_top1_hit": null,
+      "retrieval_topk_hit": null,
+      "failure_reasons": [
+        "answered_unanswerable_case",
+        "cited_source_not_in_provisional_relevance_labels"
+      ],
+      "semantic_support_verified": false
+    },
+    {
+      "question_id": "dev-overlap03",
+      "question": "What learning rate should I use for this LoRA fine-tuning job?",
+      "category": "overlapping_vocabulary_unanswerable",
+      "expected_answerable": false,
+      "relevant_doc_ids": [],
+      "label_status": "pending_human_review",
+      "provenance": "Authored development fixture based on the included synthetic corpus; not human-reviewed, not locked evaluation, and not a model-generated reference answer.",
+      "expected_rationale": "The LoRA note describes adapters without a task-specific learning rate.",
+      "status": "abstained",
+      "abstention_reason": "weak_lexical_evidence",
+      "answer": "I cannot answer from the indexed corpus: no passage passed the lexical evidence checks.",
+      "retrieved_sources": [
+        {
+          "doc_id": "lora_adaptation",
+          "title": "LoRA Adapter Fine-Tuning",
+          "score": 0.42593992586182866,
+          "snippet": "# LoRA Adapter Fine-Tuning  LoRA fine-tuning trains low-rank adapter weights for large language models while keeping most base model parameters frozen."
+        },
+        {
+          "doc_id": "rate_limiting",
+          "title": "API Rate Limiting",
+          "score": 0.2435365199282461,
+          "snippet": "# API Rate Limiting  Rate limiting protects public APIs from abusive traffic and keeps inference costs predictable."
+        },
+        {
+          "doc_id": "batch_inference",
+          "title": "Batch Inference Pipeline",
+          "score": 0.0622787706544435,
+          "snippet": "# Batch Inference Pipeline  Batch inference scores scheduled datasets, writes predictions to storage, and validates row counts before downstream use."
+        }
+      ],
+      "cited_sources": [],
+      "retrieval_top1_hit": null,
+      "retrieval_topk_hit": null,
+      "failure_reasons": [],
+      "semantic_support_verified": false
+    },
+    {
+      "question_id": "dev-overlap04",
+      "question": "What was the measured macro-F1 score on our latest classification test?",
+      "category": "overlapping_vocabulary_unanswerable",
+      "expected_answerable": false,
+      "relevant_doc_ids": [],
+      "label_status": "pending_human_review",
+      "provenance": "Authored development fixture based on the included synthetic corpus; not human-reviewed, not locked evaluation, and not a model-generated reference answer.",
+      "expected_rationale": "The metric definition contains no experiment results.",
+      "status": "abstained",
+      "abstention_reason": "weak_lexical_evidence",
+      "answer": "I cannot answer from the indexed corpus: no passage passed the lexical evidence checks.",
+      "retrieved_sources": [
+        {
+          "doc_id": "macro_f1",
+          "title": "Macro-F1 Evaluation",
+          "score": 0.6050887076032119,
+          "snippet": "# Macro-F1 Evaluation  Macro-F1 averages class-level F1 scores and is useful when labels are imbalanced across stance, sentiment, or classification tasks."
+        },
+        {
+          "doc_id": "mcc_metric",
+          "title": "Matthews Correlation Coefficient",
+          "score": 0.09851692377007189,
+          "snippet": "# Matthews Correlation Coefficient  MCC measures classification quality using true and false positives and negatives, staying informative under label imbalance."
+        },
+        {
+          "doc_id": "ab_testing",
+          "title": "A/B Test Readout",
+          "score": 0.053332858086933485,
+          "snippet": "# A/B Test Readout  A/B test readouts compare control and treatment conversion rates, confidence intervals, p-values, and rollout recommendations."
+        }
+      ],
+      "cited_sources": [],
+      "retrieval_top1_hit": null,
+      "retrieval_topk_hit": null,
+      "failure_reasons": [],
+      "semantic_support_verified": false
+    },
+    {
+      "question_id": "dev-overlap05",
+      "question": "Which rollback command restores our Dockerized FastAPI service?",
+      "category": "overlapping_vocabulary_unanswerable",
+      "expected_answerable": false,
+      "relevant_doc_ids": [],
+      "label_status": "pending_human_review",
+      "provenance": "Authored development fixture based on the included synthetic corpus; not human-reviewed, not locked evaluation, and not a model-generated reference answer.",
+      "expected_rationale": "Deployment notes list concepts without this service's rollback command.",
+      "status": "answered",
+      "abstention_reason": null,
+      "answer": "# Dockerized FastAPI Deployment  Docker packages a FastAPI model service with pinned dependencies, a health check, and a stable uvicorn startup command for cloud deployment. [docker_fastapi]",
+      "retrieved_sources": [
+        {
+          "doc_id": "docker_fastapi",
+          "title": "Dockerized FastAPI Deployment",
+          "score": 0.5879834008999734,
+          "snippet": "# Dockerized FastAPI Deployment  Docker packages a FastAPI model service with pinned dependencies, a health check, and a stable uvicorn startup command for cloud deployment."
+        },
+        {
+          "doc_id": "cloud_runbook",
+          "title": "Cloud Deployment Runbook",
+          "score": 0.06483837926745674,
+          "snippet": "# Cloud Deployment Runbook  A deployment runbook documents build commands, environment variables, rollback steps, and health checks for cloud services."
+        }
+      ],
+      "cited_sources": [
+        {
+          "doc_id": "docker_fastapi",
+          "title": "Dockerized FastAPI Deployment",
+          "score": 0.5879834008999734,
+          "snippet": "# Dockerized FastAPI Deployment  Docker packages a FastAPI model service with pinned dependencies, a health check, and a stable uvicorn startup command for cloud deployment."
+        }
+      ],
+      "retrieval_top1_hit": null,
+      "retrieval_topk_hit": null,
+      "failure_reasons": [
+        "answered_unanswerable_case",
+        "cited_source_not_in_provisional_relevance_labels"
+      ],
+      "semantic_support_verified": false
+    },
+    {
+      "question_id": "dev-overlap06",
+      "question": "What is the exact redaction accuracy of the PII redaction system?",
+      "category": "overlapping_vocabulary_unanswerable",
+      "expected_answerable": false,
+      "relevant_doc_ids": [],
+      "label_status": "pending_human_review",
+      "provenance": "Authored development fixture based on the included synthetic corpus; not human-reviewed, not locked evaluation, and not a model-generated reference answer.",
+      "expected_rationale": "The PII note lists removed information but gives no accuracy evaluation.",
+      "status": "answered",
+      "abstention_reason": null,
+      "answer": "# PII Redaction  PII redaction removes names, emails, phone numbers, addresses, and identifiers before text is logged or sent to a model. [pii_redaction]",
+      "retrieved_sources": [
+        {
+          "doc_id": "pii_redaction",
+          "title": "PII Redaction",
+          "score": 0.744972327430938,
+          "snippet": "# PII Redaction  PII redaction removes names, emails, phone numbers, addresses, and identifiers before text is logged or sent to a model."
+        },
+        {
+          "doc_id": "prompt_injection",
+          "title": "Prompt Injection Defense",
+          "score": 0.052802287780256495,
+          "snippet": "# Prompt Injection Defense  Prompt injection defense separates system instructions from retrieved content and filters untrusted instructions before generation."
+        }
+      ],
+      "cited_sources": [
+        {
+          "doc_id": "pii_redaction",
+          "title": "PII Redaction",
+          "score": 0.744972327430938,
+          "snippet": "# PII Redaction  PII redaction removes names, emails, phone numbers, addresses, and identifiers before text is logged or sent to a model."
+        }
+      ],
+      "retrieval_top1_hit": null,
+      "retrieval_topk_hit": null,
+      "failure_reasons": [
+        "answered_unanswerable_case",
+        "cited_source_not_in_provisional_relevance_labels"
+      ],
+      "semantic_support_verified": false
+    },
+    {
+      "question_id": "dev-overlap07",
+      "question": "Which database vendor stores our approved model versions?",
+      "category": "overlapping_vocabulary_unanswerable",
+      "expected_answerable": false,
+      "relevant_doc_ids": [],
+      "label_status": "pending_human_review",
+      "provenance": "Authored development fixture based on the included synthetic corpus; not human-reviewed, not locked evaluation, and not a model-generated reference answer.",
+      "expected_rationale": "The registry note does not name a database vendor.",
+      "status": "answered",
+      "abstention_reason": null,
+      "answer": "# Model Registry Governance  A model registry stores approved model versions, signatures, metrics, owners, and deployment stages for controlled releases. [model_registry]",
+      "retrieved_sources": [
+        {
+          "doc_id": "model_registry",
+          "title": "Model Registry Governance",
+          "score": 0.2675205850303871,
+          "snippet": "# Model Registry Governance  A model registry stores approved model versions, signatures, metrics, owners, and deployment stages for controlled releases."
+        },
+        {
+          "doc_id": "schema_migration",
+          "title": "Schema Migration",
+          "score": 0.09822154384216826,
+          "snippet": "# Schema Migration  Schema migrations apply controlled database changes and prevent breaking downstream analytics or inference jobs."
+        },
+        {
+          "doc_id": "mlflow_tracking",
+          "title": "MLflow Experiment Tracking",
+          "score": 0.07055171569167809,
+          "snippet": "# MLflow Experiment Tracking  MLflow records parameters, metrics, artifacts, and model versions so machine learning experiments can be reproduced and compared."
+        }
+      ],
+      "cited_sources": [
+        {
+          "doc_id": "model_registry",
+          "title": "Model Registry Governance",
+          "score": 0.2675205850303871,
+          "snippet": "# Model Registry Governance  A model registry stores approved model versions, signatures, metrics, owners, and deployment stages for controlled releases."
+        }
+      ],
+      "retrieval_top1_hit": null,
+      "retrieval_topk_hit": null,
+      "failure_reasons": [
+        "answered_unanswerable_case",
+        "cited_source_not_in_provisional_relevance_labels"
+      ],
+      "semantic_support_verified": false
+    },
+    {
+      "question_id": "dev-overlap08",
+      "question": "What measured conversion rate did treatment achieve in the A/B test?",
+      "category": "overlapping_vocabulary_unanswerable",
+      "expected_answerable": false,
+      "relevant_doc_ids": [],
+      "label_status": "pending_human_review",
+      "provenance": "Authored development fixture based on the included synthetic corpus; not human-reviewed, not locked evaluation, and not a model-generated reference answer.",
+      "expected_rationale": "The test-readout note describes metrics but supplies no trial outcomes.",
+      "status": "answered",
+      "abstention_reason": null,
+      "answer": "# A/B Test Readout  A/B test readouts compare control and treatment conversion rates, confidence intervals, p-values, and rollout recommendations. [ab_testing]",
+      "retrieved_sources": [
+        {
+          "doc_id": "rate_limiting",
+          "title": "API Rate Limiting",
+          "score": 0.3405201189504291,
+          "snippet": "Operational note: API Rate Limiting supports reliable ML engineering workflows by making model behavior easier to test, deploy, monitor, and explain."
+        },
+        {
+          "doc_id": "ab_testing",
+          "title": "A/B Test Readout",
+          "score": 0.28230591316013326,
+          "snippet": "# A/B Test Readout  A/B test readouts compare control and treatment conversion rates, confidence intervals, p-values, and rollout recommendations."
+        },
+        {
+          "doc_id": "unit_tests",
+          "title": "Unit Test Coverage",
+          "score": 0.025264045580745464,
+          "snippet": "# Unit Test Coverage  Unit tests validate retrieval ranking, API response shape, schema validation, and edge cases before code reaches production."
+        }
+      ],
+      "cited_sources": [
+        {
+          "doc_id": "ab_testing",
+          "title": "A/B Test Readout",
+          "score": 0.28230591316013326,
+          "snippet": "# A/B Test Readout  A/B test readouts compare control and treatment conversion rates, confidence intervals, p-values, and rollout recommendations."
+        }
+      ],
+      "retrieval_top1_hit": null,
+      "retrieval_topk_hit": null,
+      "failure_reasons": [
+        "answered_unanswerable_case",
+        "cited_source_not_in_provisional_relevance_labels"
+      ],
+      "semantic_support_verified": false
+    },
+    {
+      "question_id": "dev-overlap09",
+      "question": "What dataset row count was written by yesterday's batch inference?",
+      "category": "overlapping_vocabulary_unanswerable",
+      "expected_answerable": false,
+      "relevant_doc_ids": [],
+      "label_status": "pending_human_review",
+      "provenance": "Authored development fixture based on the included synthetic corpus; not human-reviewed, not locked evaluation, and not a model-generated reference answer.",
+      "expected_rationale": "The batch note specifies validation, not a recorded run's row count.",
+      "status": "answered",
+      "abstention_reason": null,
+      "answer": "# Batch Inference Pipeline  Batch inference scores scheduled datasets, writes predictions to storage, and validates row counts before downstream use. [batch_inference]",
+      "retrieved_sources": [
+        {
+          "doc_id": "batch_inference",
+          "title": "Batch Inference Pipeline",
+          "score": 0.5624880134737767,
+          "snippet": "# Batch Inference Pipeline  Batch inference scores scheduled datasets, writes predictions to storage, and validates row counts before downstream use."
+        },
+        {
+          "doc_id": "evaluation_dataset",
+          "title": "Evaluation Dataset Design",
+          "score": 0.2458266032709314,
+          "snippet": "# Evaluation Dataset Design  Evaluation datasets should include expected answers, expected source documents, negative cases, and stable IDs for repeatable scoring."
+        },
+        {
+          "doc_id": "online_inference",
+          "title": "Online Inference API",
+          "score": 0.1720012054868697,
+          "snippet": "# Online Inference API  Online inference serves predictions through low-latency endpoints with request validation, error handling, and structured logs."
+        }
+      ],
+      "cited_sources": [
+        {
+          "doc_id": "batch_inference",
+          "title": "Batch Inference Pipeline",
+          "score": 0.5624880134737767,
+          "snippet": "# Batch Inference Pipeline  Batch inference scores scheduled datasets, writes predictions to storage, and validates row counts before downstream use."
+        }
+      ],
+      "retrieval_top1_hit": null,
+      "retrieval_topk_hit": null,
+      "failure_reasons": [
+        "answered_unanswerable_case",
+        "cited_source_not_in_provisional_relevance_labels"
+      ],
+      "semantic_support_verified": false
+    },
+    {
+      "question_id": "dev-overlap10",
+      "question": "Which names and email addresses appeared in the original unredacted text?",
+      "category": "overlapping_vocabulary_unanswerable",
+      "expected_answerable": false,
+      "relevant_doc_ids": [],
+      "label_status": "pending_human_review",
+      "provenance": "Authored development fixture based on the included synthetic corpus; not human-reviewed, not locked evaluation, and not a model-generated reference answer.",
+      "expected_rationale": "The redaction note has no underlying records or identifying values.",
+      "status": "answered",
+      "abstention_reason": null,
+      "answer": "# PII Redaction  PII redaction removes names, emails, phone numbers, addresses, and identifiers before text is logged or sent to a model. [pii_redaction]",
+      "retrieved_sources": [
+        {
+          "doc_id": "pii_redaction",
+          "title": "PII Redaction",
+          "score": 0.2543724587454084,
+          "snippet": "# PII Redaction  PII redaction removes names, emails, phone numbers, addresses, and identifiers before text is logged or sent to a model."
+        },
+        {
+          "doc_id": "structured_logging",
+          "title": "Structured Logging",
+          "score": 0.08332600319459209,
+          "snippet": "# Structured Logging  Structured logs capture request IDs, latency, endpoint names, and error types for debugging deployed ML services."
+        }
+      ],
+      "cited_sources": [
+        {
+          "doc_id": "pii_redaction",
+          "title": "PII Redaction",
+          "score": 0.2543724587454084,
+          "snippet": "# PII Redaction  PII redaction removes names, emails, phone numbers, addresses, and identifiers before text is logged or sent to a model."
+        }
+      ],
+      "retrieval_top1_hit": null,
+      "retrieval_topk_hit": null,
+      "failure_reasons": [
+        "answered_unanswerable_case",
+        "cited_source_not_in_provisional_relevance_labels"
+      ],
+      "semantic_support_verified": false
+    },
+    {
+      "question_id": "dev-overlap11",
+      "question": "What is the optimal document chunking size in tokens for my private corpus?",
+      "category": "overlapping_vocabulary_unanswerable",
+      "expected_answerable": false,
+      "relevant_doc_ids": [],
+      "label_status": "pending_human_review",
+      "provenance": "Authored development fixture based on the included synthetic corpus; not human-reviewed, not locked evaluation, and not a model-generated reference answer.",
+      "expected_rationale": "The chunking note has no corpus-specific optimum or token count.",
+      "status": "abstained",
+      "abstention_reason": "weak_lexical_evidence",
+      "answer": "I cannot answer from the indexed corpus: no passage passed the lexical evidence checks.",
+      "retrieved_sources": [
+        {
+          "doc_id": "document_chunking",
+          "title": "Document Chunking",
+          "score": 0.841472763505154,
+          "snippet": "# Document Chunking  Document chunking splits long files into retrievable passages while preserving enough context for source-grounded answers."
+        },
+        {
+          "doc_id": "rag_citations",
+          "title": "RAG Citation Policy",
+          "score": 0.08280514712981919,
+          "snippet": "# RAG Citation Policy  Retrieval augmented generation should return source citations, document identifiers, and quoted evidence so users can audit generated answers."
+        },
+        {
+          "doc_id": "retrieval_at_k",
+          "title": "Retrieval@K Metric",
+          "score": 0.076438569445879,
+          "snippet": "# Retrieval@K Metric  Retrieval@K measures whether the expected source document appears within the top K retrieved documents for a question."
+        }
+      ],
+      "cited_sources": [],
+      "retrieval_top1_hit": null,
+      "retrieval_topk_hit": null,
+      "failure_reasons": [],
+      "semantic_support_verified": false
+    },
+    {
+      "question_id": "dev-overlap12",
+      "question": "What was our observed 30-day cohort retention percentage?",
+      "category": "overlapping_vocabulary_unanswerable",
+      "expected_answerable": false,
+      "relevant_doc_ids": [],
+      "label_status": "pending_human_review",
+      "provenance": "Authored development fixture based on the included synthetic corpus; not human-reviewed, not locked evaluation, and not a model-generated reference answer.",
+      "expected_rationale": "The cohort note defines retention periods without observed percentages.",
+      "status": "abstained",
+      "abstention_reason": "weak_lexical_evidence",
+      "answer": "I cannot answer from the indexed corpus: no passage passed the lexical evidence checks.",
+      "retrieved_sources": [
+        {
+          "doc_id": "cohort_retention",
+          "title": "Cohort Retention Metrics",
+          "score": 0.8027508623941972,
+          "snippet": "# Cohort Retention Metrics  Cohort retention groups users by start period and measures whether they return after 7, 14, or 30 days."
+        }
+      ],
+      "cited_sources": [],
+      "retrieval_top1_hit": null,
+      "retrieval_topk_hit": null,
+      "failure_reasons": [],
+      "semantic_support_verified": false
+    },
+    {
+      "question_id": "dev-ood01",
+      "question": "Who painted the Mona Lisa?",
+      "category": "out_of_domain_unanswerable",
+      "expected_answerable": false,
+      "relevant_doc_ids": [],
+      "label_status": "pending_human_review",
+      "provenance": "Authored development fixture based on the included synthetic corpus; not human-reviewed, not locked evaluation, and not a model-generated reference answer.",
+      "expected_rationale": "The indexed ML/MLOps corpus contains no answer to this question.",
+      "status": "abstained",
+      "abstention_reason": "no_matching_terms",
+      "answer": "I cannot answer from the indexed corpus: no passage passed the lexical evidence checks.",
+      "retrieved_sources": [],
+      "cited_sources": [],
+      "retrieval_top1_hit": null,
+      "retrieval_topk_hit": null,
+      "failure_reasons": [],
+      "semantic_support_verified": false
+    },
+    {
+      "question_id": "dev-ood02",
+      "question": "How many moons orbit Jupiter?",
+      "category": "out_of_domain_unanswerable",
+      "expected_answerable": false,
+      "relevant_doc_ids": [],
+      "label_status": "pending_human_review",
+      "provenance": "Authored development fixture based on the included synthetic corpus; not human-reviewed, not locked evaluation, and not a model-generated reference answer.",
+      "expected_rationale": "The indexed ML/MLOps corpus contains no answer to this question.",
+      "status": "abstained",
+      "abstention_reason": "no_matching_terms",
+      "answer": "I cannot answer from the indexed corpus: no passage passed the lexical evidence checks.",
+      "retrieved_sources": [],
+      "cited_sources": [],
+      "retrieval_top1_hit": null,
+      "retrieval_topk_hit": null,
+      "failure_reasons": [],
+      "semantic_support_verified": false
+    },
+    {
+      "question_id": "dev-ood03",
+      "question": "What ingredients make a traditional biryani?",
+      "category": "out_of_domain_unanswerable",
+      "expected_answerable": false,
+      "relevant_doc_ids": [],
+      "label_status": "pending_human_review",
+      "provenance": "Authored development fixture based on the included synthetic corpus; not human-reviewed, not locked evaluation, and not a model-generated reference answer.",
+      "expected_rationale": "The indexed ML/MLOps corpus contains no answer to this question.",
+      "status": "abstained",
+      "abstention_reason": "no_matching_terms",
+      "answer": "I cannot answer from the indexed corpus: no passage passed the lexical evidence checks.",
+      "retrieved_sources": [],
+      "cited_sources": [],
+      "retrieval_top1_hit": null,
+      "retrieval_topk_hit": null,
+      "failure_reasons": [],
+      "semantic_support_verified": false
+    },
+    {
+      "question_id": "dev-ood04",
+      "question": "Who won Wimbledon in 2025?",
+      "category": "out_of_domain_unanswerable",
+      "expected_answerable": false,
+      "relevant_doc_ids": [],
+      "label_status": "pending_human_review",
+      "provenance": "Authored development fixture based on the included synthetic corpus; not human-reviewed, not locked evaluation, and not a model-generated reference answer.",
+      "expected_rationale": "The indexed ML/MLOps corpus contains no answer to this question.",
+      "status": "abstained",
+      "abstention_reason": "no_matching_terms",
+      "answer": "I cannot answer from the indexed corpus: no passage passed the lexical evidence checks.",
+      "retrieved_sources": [],
+      "cited_sources": [],
+      "retrieval_top1_hit": null,
+      "retrieval_topk_hit": null,
+      "failure_reasons": [],
+      "semantic_support_verified": false
+    },
+    {
+      "question_id": "dev-ood05",
+      "question": "What is the capital city of Mongolia?",
+      "category": "out_of_domain_unanswerable",
+      "expected_answerable": false,
+      "relevant_doc_ids": [],
+      "label_status": "pending_human_review",
+      "provenance": "Authored development fixture based on the included synthetic corpus; not human-reviewed, not locked evaluation, and not a model-generated reference answer.",
+      "expected_rationale": "The indexed ML/MLOps corpus contains no answer to this question.",
+      "status": "abstained",
+      "abstention_reason": "no_matching_terms",
+      "answer": "I cannot answer from the indexed corpus: no passage passed the lexical evidence checks.",
+      "retrieved_sources": [],
+      "cited_sources": [],
+      "retrieval_top1_hit": null,
+      "retrieval_topk_hit": null,
+      "failure_reasons": [],
+      "semantic_support_verified": false
+    },
+    {
+      "question_id": "dev-ood06",
+      "question": "How tall is Mount Everest?",
+      "category": "out_of_domain_unanswerable",
+      "expected_answerable": false,
+      "relevant_doc_ids": [],
+      "label_status": "pending_human_review",
+      "provenance": "Authored development fixture based on the included synthetic corpus; not human-reviewed, not locked evaluation, and not a model-generated reference answer.",
+      "expected_rationale": "The indexed ML/MLOps corpus contains no answer to this question.",
+      "status": "abstained",
+      "abstention_reason": "no_matching_terms",
+      "answer": "I cannot answer from the indexed corpus: no passage passed the lexical evidence checks.",
+      "retrieved_sources": [],
+      "cited_sources": [],
+      "retrieval_top1_hit": null,
+      "retrieval_topk_hit": null,
+      "failure_reasons": [],
+      "semantic_support_verified": false
+    },
+    {
+      "question_id": "dev-ood07",
+      "question": "When was the Taj Mahal completed?",
+      "category": "out_of_domain_unanswerable",
+      "expected_answerable": false,
+      "relevant_doc_ids": [],
+      "label_status": "pending_human_review",
+      "provenance": "Authored development fixture based on the included synthetic corpus; not human-reviewed, not locked evaluation, and not a model-generated reference answer.",
+      "expected_rationale": "The indexed ML/MLOps corpus contains no answer to this question.",
+      "status": "abstained",
+      "abstention_reason": "no_matching_terms",
+      "answer": "I cannot answer from the indexed corpus: no passage passed the lexical evidence checks.",
+      "retrieved_sources": [],
+      "cited_sources": [],
+      "retrieval_top1_hit": null,
+      "retrieval_topk_hit": null,
+      "failure_reasons": [],
+      "semantic_support_verified": false
+    },
+    {
+      "question_id": "dev-ood08",
+      "question": "What is the chemical formula of caffeine?",
+      "category": "out_of_domain_unanswerable",
+      "expected_answerable": false,
+      "relevant_doc_ids": [],
+      "label_status": "pending_human_review",
+      "provenance": "Authored development fixture based on the included synthetic corpus; not human-reviewed, not locked evaluation, and not a model-generated reference answer.",
+      "expected_rationale": "The indexed ML/MLOps corpus contains no answer to this question.",
+      "status": "abstained",
+      "abstention_reason": "no_matching_terms",
+      "answer": "I cannot answer from the indexed corpus: no passage passed the lexical evidence checks.",
+      "retrieved_sources": [],
+      "cited_sources": [],
+      "retrieval_top1_hit": null,
+      "retrieval_topk_hit": null,
+      "failure_reasons": [],
+      "semantic_support_verified": false
+    }
+  ],
+  "latency": {
+    "measurements": 52,
+    "avg_ms": 0.1733288473378007,
+    "p95_ms": 0.2911000046879053,
+    "scope": "local in-process extractive answer; no network or model generation"
+  },
+  "protocol": {
+    "top_k": 3,
+    "evidence_policy": {
+      "min_score": 0.1,
+      "min_query_term_coverage": 0.3,
+      "min_shared_terms": 2,
+      "max_cited_sources": 2
+    },
+    "label_status_counts": {
+      "pending_human_review": 52
+    },
+    "split": "development; no training or threshold tuning during this evaluation",
+    "data_source": "authored synthetic ML/MLOps corpus and authored development cases",
+    "semantic_support": "not measured: valid source IDs and exact extractive provenance do not verify that a passage answers the question",
+    "citation_relevance": "compares cited IDs to provisional relevant_doc_ids; requires human review and does not measure semantic entailment",
+    "compatibility": "schema 2 replaces misleading citation_coverage with explicitly defined source-presence, relevance, and traceability metrics"
+  },
+  "reproducibility": {
+    "python": "3.12.13",
+    "corpus_sha256": "3629a499ad0b5b8940d7465f8d3a327ee81fc27d9e4f0e64edd63ab80ff7a291",
+    "evaluation_cases_sha256": "5c3e7190e72733ef9f159408278a517c975b112d83267db2ed169870401ba5f4",
+    "deterministic_case_results_sha256": "ac3375fbf38f267e6164a72d4ec67f22e153691c1c1fa3c6b91200f78b2a8965",
+    "source_sha256_normalized_lf": {
+      "rag_api/retriever.py": "bd81b10ce0581fa12d07828e988c4ee67d2d5c68ef3324ecf3bf12db477b14b0",
+      "rag_api/evaluation.py": "c464c9e621d08ab4633624246a23b7071080b7f5a76697ab5a30545007155a4b",
+      "rag_api/corpus.py": "4ff4f49bc7b12b91c2593506ab975b10707091dd50cab6d97c408e14af585ff5",
+      "scripts/build_challenge.py": "c283fa9c4ee5ebe87cfc6a595101e8433bf3cfc253f3282cd8a70fd0d8a1624a",
+      "scripts/run_evaluation.py": "dfcab0a7a5d9736a3428c20f0d30662fa4655bfc12c85cfd7fc536133c8cdf84"
+    }
+  }
 }

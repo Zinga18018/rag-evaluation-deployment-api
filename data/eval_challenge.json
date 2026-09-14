@@ -1,0 +1,378 @@
+[
+  {
+    "question_id": "dev-a01",
+    "question": "What should evaluation datasets include for repeatable scoring?",
+    "answerable": true,
+    "relevant_doc_ids": [
+      "evaluation_dataset"
+    ],
+    "category": "additional_answerable",
+    "expected_rationale": "The named corpus document states the requested definition or mechanism.",
+    "label_status": "pending_human_review",
+    "dataset_version": "development-challenge-v1",
+    "provenance": "Authored development fixture based on the included synthetic corpus; not human-reviewed, not locked evaluation, and not a model-generated reference answer."
+  },
+  {
+    "question_id": "dev-a02",
+    "question": "Which checks can GitHub Actions run on every pull request?",
+    "answerable": true,
+    "relevant_doc_ids": [
+      "github_actions"
+    ],
+    "category": "additional_answerable",
+    "expected_rationale": "The named corpus document states the requested definition or mechanism.",
+    "label_status": "pending_human_review",
+    "dataset_version": "development-challenge-v1",
+    "provenance": "Authored development fixture based on the included synthetic corpus; not human-reviewed, not locked evaluation, and not a model-generated reference answer."
+  },
+  {
+    "question_id": "dev-a03",
+    "question": "What should unit tests validate before code reaches production?",
+    "answerable": true,
+    "relevant_doc_ids": [
+      "unit_tests"
+    ],
+    "category": "additional_answerable",
+    "expected_rationale": "The named corpus document states the requested definition or mechanism.",
+    "label_status": "pending_human_review",
+    "dataset_version": "development-challenge-v1",
+    "provenance": "Authored development fixture based on the included synthetic corpus; not human-reviewed, not locked evaluation, and not a model-generated reference answer."
+  },
+  {
+    "question_id": "dev-a04",
+    "question": "Which debugging fields are captured in structured logs?",
+    "answerable": true,
+    "relevant_doc_ids": [
+      "structured_logging"
+    ],
+    "category": "additional_answerable",
+    "expected_rationale": "The named corpus document states the requested definition or mechanism.",
+    "label_status": "pending_human_review",
+    "dataset_version": "development-challenge-v1",
+    "provenance": "Authored development fixture based on the included synthetic corpus; not human-reviewed, not locked evaluation, and not a model-generated reference answer."
+  },
+  {
+    "question_id": "dev-a05",
+    "question": "Why cache repeated retrieval results for common questions?",
+    "answerable": true,
+    "relevant_doc_ids": [
+      "cache_layer"
+    ],
+    "category": "additional_answerable",
+    "expected_rationale": "The named corpus document states the requested definition or mechanism.",
+    "label_status": "pending_human_review",
+    "dataset_version": "development-challenge-v1",
+    "provenance": "Authored development fixture based on the included synthetic corpus; not human-reviewed, not locked evaluation, and not a model-generated reference answer."
+  },
+  {
+    "question_id": "dev-a06",
+    "question": "How does document chunking make long files retrievable?",
+    "answerable": true,
+    "relevant_doc_ids": [
+      "document_chunking"
+    ],
+    "category": "additional_answerable",
+    "expected_rationale": "The named corpus document states the requested definition or mechanism.",
+    "label_status": "pending_human_review",
+    "dataset_version": "development-challenge-v1",
+    "provenance": "Authored development fixture based on the included synthetic corpus; not human-reviewed, not locked evaluation, and not a model-generated reference answer."
+  },
+  {
+    "question_id": "dev-a07",
+    "question": "What does faithfulness evaluation check about generated answers?",
+    "answerable": true,
+    "relevant_doc_ids": [
+      "faithfulness_eval"
+    ],
+    "category": "additional_answerable",
+    "expected_rationale": "The named corpus document states the requested definition or mechanism.",
+    "label_status": "pending_human_review",
+    "dataset_version": "development-challenge-v1",
+    "provenance": "Authored development fixture based on the included synthetic corpus; not human-reviewed, not locked evaluation, and not a model-generated reference answer."
+  },
+  {
+    "question_id": "dev-a08",
+    "question": "What belongs in a cloud deployment runbook?",
+    "answerable": true,
+    "relevant_doc_ids": [
+      "cloud_runbook"
+    ],
+    "category": "additional_answerable",
+    "expected_rationale": "The named corpus document states the requested definition or mechanism.",
+    "label_status": "pending_human_review",
+    "dataset_version": "development-challenge-v1",
+    "provenance": "Authored development fixture based on the included synthetic corpus; not human-reviewed, not locked evaluation, and not a model-generated reference answer."
+  },
+  {
+    "question_id": "dev-a09",
+    "question": "How does data lineage track datasets and versions?",
+    "answerable": true,
+    "relevant_doc_ids": [
+      "data_lineage"
+    ],
+    "category": "additional_answerable",
+    "expected_rationale": "The named corpus document states the requested definition or mechanism.",
+    "label_status": "pending_human_review",
+    "dataset_version": "development-challenge-v1",
+    "provenance": "Authored development fixture based on the included synthetic corpus; not human-reviewed, not locked evaluation, and not a model-generated reference answer."
+  },
+  {
+    "question_id": "dev-a10",
+    "question": "Why apply controlled schema migrations to a database?",
+    "answerable": true,
+    "relevant_doc_ids": [
+      "schema_migration"
+    ],
+    "category": "additional_answerable",
+    "expected_rationale": "The named corpus document states the requested definition or mechanism.",
+    "label_status": "pending_human_review",
+    "dataset_version": "development-challenge-v1",
+    "provenance": "Authored development fixture based on the included synthetic corpus; not human-reviewed, not locked evaluation, and not a model-generated reference answer."
+  },
+  {
+    "question_id": "dev-a11",
+    "question": "How does rate limiting protect public APIs?",
+    "answerable": true,
+    "relevant_doc_ids": [
+      "rate_limiting"
+    ],
+    "category": "additional_answerable",
+    "expected_rationale": "The named corpus document states the requested definition or mechanism.",
+    "label_status": "pending_human_review",
+    "dataset_version": "development-challenge-v1",
+    "provenance": "Authored development fixture based on the included synthetic corpus; not human-reviewed, not locked evaluation, and not a model-generated reference answer."
+  },
+  {
+    "question_id": "dev-a12",
+    "question": "Which failures need ML incident response triage?",
+    "answerable": true,
+    "relevant_doc_ids": [
+      "incident_response"
+    ],
+    "category": "additional_answerable",
+    "expected_rationale": "The named corpus document states the requested definition or mechanism.",
+    "label_status": "pending_human_review",
+    "dataset_version": "development-challenge-v1",
+    "provenance": "Authored development fixture based on the included synthetic corpus; not human-reviewed, not locked evaluation, and not a model-generated reference answer."
+  },
+  {
+    "question_id": "dev-overlap01",
+    "question": "What exact p95 latency did this model API achieve yesterday?",
+    "answerable": false,
+    "relevant_doc_ids": [],
+    "category": "overlapping_vocabulary_unanswerable",
+    "expected_rationale": "The latency note defines measurements but provides no dated observations.",
+    "label_status": "pending_human_review",
+    "dataset_version": "development-challenge-v1",
+    "provenance": "Authored development fixture based on the included synthetic corpus; not human-reviewed, not locked evaluation, and not a model-generated reference answer."
+  },
+  {
+    "question_id": "dev-overlap02",
+    "question": "What dollar cost did SLURM GPU training incur last month?",
+    "answerable": false,
+    "relevant_doc_ids": [],
+    "category": "overlapping_vocabulary_unanswerable",
+    "expected_rationale": "The SLURM note explains scheduling but contains no expenditure records.",
+    "label_status": "pending_human_review",
+    "dataset_version": "development-challenge-v1",
+    "provenance": "Authored development fixture based on the included synthetic corpus; not human-reviewed, not locked evaluation, and not a model-generated reference answer."
+  },
+  {
+    "question_id": "dev-overlap03",
+    "question": "What learning rate should I use for this LoRA fine-tuning job?",
+    "answerable": false,
+    "relevant_doc_ids": [],
+    "category": "overlapping_vocabulary_unanswerable",
+    "expected_rationale": "The LoRA note describes adapters without a task-specific learning rate.",
+    "label_status": "pending_human_review",
+    "dataset_version": "development-challenge-v1",
+    "provenance": "Authored development fixture based on the included synthetic corpus; not human-reviewed, not locked evaluation, and not a model-generated reference answer."
+  },
+  {
+    "question_id": "dev-overlap04",
+    "question": "What was the measured macro-F1 score on our latest classification test?",
+    "answerable": false,
+    "relevant_doc_ids": [],
+    "category": "overlapping_vocabulary_unanswerable",
+    "expected_rationale": "The metric definition contains no experiment results.",
+    "label_status": "pending_human_review",
+    "dataset_version": "development-challenge-v1",
+    "provenance": "Authored development fixture based on the included synthetic corpus; not human-reviewed, not locked evaluation, and not a model-generated reference answer."
+  },
+  {
+    "question_id": "dev-overlap05",
+    "question": "Which rollback command restores our Dockerized FastAPI service?",
+    "answerable": false,
+    "relevant_doc_ids": [],
+    "category": "overlapping_vocabulary_unanswerable",
+    "expected_rationale": "Deployment notes list concepts without this service's rollback command.",
+    "label_status": "pending_human_review",
+    "dataset_version": "development-challenge-v1",
+    "provenance": "Authored development fixture based on the included synthetic corpus; not human-reviewed, not locked evaluation, and not a model-generated reference answer."
+  },
+  {
+    "question_id": "dev-overlap06",
+    "question": "What is the exact redaction accuracy of the PII redaction system?",
+    "answerable": false,
+    "relevant_doc_ids": [],
+    "category": "overlapping_vocabulary_unanswerable",
+    "expected_rationale": "The PII note lists removed information but gives no accuracy evaluation.",
+    "label_status": "pending_human_review",
+    "dataset_version": "development-challenge-v1",
+    "provenance": "Authored development fixture based on the included synthetic corpus; not human-reviewed, not locked evaluation, and not a model-generated reference answer."
+  },
+  {
+    "question_id": "dev-overlap07",
+    "question": "Which database vendor stores our approved model versions?",
+    "answerable": false,
+    "relevant_doc_ids": [],
+    "category": "overlapping_vocabulary_unanswerable",
+    "expected_rationale": "The registry note does not name a database vendor.",
+    "label_status": "pending_human_review",
+    "dataset_version": "development-challenge-v1",
+    "provenance": "Authored development fixture based on the included synthetic corpus; not human-reviewed, not locked evaluation, and not a model-generated reference answer."
+  },
+  {
+    "question_id": "dev-overlap08",
+    "question": "What measured conversion rate did treatment achieve in the A/B test?",
+    "answerable": false,
+    "relevant_doc_ids": [],
+    "category": "overlapping_vocabulary_unanswerable",
+    "expected_rationale": "The test-readout note describes metrics but supplies no trial outcomes.",
+    "label_status": "pending_human_review",
+    "dataset_version": "development-challenge-v1",
+    "provenance": "Authored development fixture based on the included synthetic corpus; not human-reviewed, not locked evaluation, and not a model-generated reference answer."
+  },
+  {
+    "question_id": "dev-overlap09",
+    "question": "What dataset row count was written by yesterday's batch inference?",
+    "answerable": false,
+    "relevant_doc_ids": [],
+    "category": "overlapping_vocabulary_unanswerable",
+    "expected_rationale": "The batch note specifies validation, not a recorded run's row count.",
+    "label_status": "pending_human_review",
+    "dataset_version": "development-challenge-v1",
+    "provenance": "Authored development fixture based on the included synthetic corpus; not human-reviewed, not locked evaluation, and not a model-generated reference answer."
+  },
+  {
+    "question_id": "dev-overlap10",
+    "question": "Which names and email addresses appeared in the original unredacted text?",
+    "answerable": false,
+    "relevant_doc_ids": [],
+    "category": "overlapping_vocabulary_unanswerable",
+    "expected_rationale": "The redaction note has no underlying records or identifying values.",
+    "label_status": "pending_human_review",
+    "dataset_version": "development-challenge-v1",
+    "provenance": "Authored development fixture based on the included synthetic corpus; not human-reviewed, not locked evaluation, and not a model-generated reference answer."
+  },
+  {
+    "question_id": "dev-overlap11",
+    "question": "What is the optimal document chunking size in tokens for my private corpus?",
+    "answerable": false,
+    "relevant_doc_ids": [],
+    "category": "overlapping_vocabulary_unanswerable",
+    "expected_rationale": "The chunking note has no corpus-specific optimum or token count.",
+    "label_status": "pending_human_review",
+    "dataset_version": "development-challenge-v1",
+    "provenance": "Authored development fixture based on the included synthetic corpus; not human-reviewed, not locked evaluation, and not a model-generated reference answer."
+  },
+  {
+    "question_id": "dev-overlap12",
+    "question": "What was our observed 30-day cohort retention percentage?",
+    "answerable": false,
+    "relevant_doc_ids": [],
+    "category": "overlapping_vocabulary_unanswerable",
+    "expected_rationale": "The cohort note defines retention periods without observed percentages.",
+    "label_status": "pending_human_review",
+    "dataset_version": "development-challenge-v1",
+    "provenance": "Authored development fixture based on the included synthetic corpus; not human-reviewed, not locked evaluation, and not a model-generated reference answer."
+  },
+  {
+    "question_id": "dev-ood01",
+    "question": "Who painted the Mona Lisa?",
+    "answerable": false,
+    "relevant_doc_ids": [],
+    "category": "out_of_domain_unanswerable",
+    "expected_rationale": "The indexed ML/MLOps corpus contains no answer to this question.",
+    "label_status": "pending_human_review",
+    "dataset_version": "development-challenge-v1",
+    "provenance": "Authored development fixture based on the included synthetic corpus; not human-reviewed, not locked evaluation, and not a model-generated reference answer."
+  },
+  {
+    "question_id": "dev-ood02",
+    "question": "How many moons orbit Jupiter?",
+    "answerable": false,
+    "relevant_doc_ids": [],
+    "category": "out_of_domain_unanswerable",
+    "expected_rationale": "The indexed ML/MLOps corpus contains no answer to this question.",
+    "label_status": "pending_human_review",
+    "dataset_version": "development-challenge-v1",
+    "provenance": "Authored development fixture based on the included synthetic corpus; not human-reviewed, not locked evaluation, and not a model-generated reference answer."
+  },
+  {
+    "question_id": "dev-ood03",
+    "question": "What ingredients make a traditional biryani?",
+    "answerable": false,
+    "relevant_doc_ids": [],
+    "category": "out_of_domain_unanswerable",
+    "expected_rationale": "The indexed ML/MLOps corpus contains no answer to this question.",
+    "label_status": "pending_human_review",
+    "dataset_version": "development-challenge-v1",
+    "provenance": "Authored development fixture based on the included synthetic corpus; not human-reviewed, not locked evaluation, and not a model-generated reference answer."
+  },
+  {
+    "question_id": "dev-ood04",
+    "question": "Who won Wimbledon in 2025?",
+    "answerable": false,
+    "relevant_doc_ids": [],
+    "category": "out_of_domain_unanswerable",
+    "expected_rationale": "The indexed ML/MLOps corpus contains no answer to this question.",
+    "label_status": "pending_human_review",
+    "dataset_version": "development-challenge-v1",
+    "provenance": "Authored development fixture based on the included synthetic corpus; not human-reviewed, not locked evaluation, and not a model-generated reference answer."
+  },
+  {
+    "question_id": "dev-ood05",
+    "question": "What is the capital city of Mongolia?",
+    "answerable": false,
+    "relevant_doc_ids": [],
+    "category": "out_of_domain_unanswerable",
+    "expected_rationale": "The indexed ML/MLOps corpus contains no answer to this question.",
+    "label_status": "pending_human_review",
+    "dataset_version": "development-challenge-v1",
+    "provenance": "Authored development fixture based on the included synthetic corpus; not human-reviewed, not locked evaluation, and not a model-generated reference answer."
+  },
+  {
+    "question_id": "dev-ood06",
+    "question": "How tall is Mount Everest?",
+    "answerable": false,
+    "relevant_doc_ids": [],
+    "category": "out_of_domain_unanswerable",
+    "expected_rationale": "The indexed ML/MLOps corpus contains no answer to this question.",
+    "label_status": "pending_human_review",
+    "dataset_version": "development-challenge-v1",
+    "provenance": "Authored development fixture based on the included synthetic corpus; not human-reviewed, not locked evaluation, and not a model-generated reference answer."
+  },
+  {
+    "question_id": "dev-ood07",
+    "question": "When was the Taj Mahal completed?",
+    "answerable": false,
+    "relevant_doc_ids": [],
+    "category": "out_of_domain_unanswerable",
+    "expected_rationale": "The indexed ML/MLOps corpus contains no answer to this question.",
+    "label_status": "pending_human_review",
+    "dataset_version": "development-challenge-v1",
+    "provenance": "Authored development fixture based on the included synthetic corpus; not human-reviewed, not locked evaluation, and not a model-generated reference answer."
+  },
+  {
+    "question_id": "dev-ood08",
+    "question": "What is the chemical formula of caffeine?",
+    "answerable": false,
+    "relevant_doc_ids": [],
+    "category": "out_of_domain_unanswerable",
+    "expected_rationale": "The indexed ML/MLOps corpus contains no answer to this question.",
+    "label_status": "pending_human_review",
+    "dataset_version": "development-challenge-v1",
+    "provenance": "Authored development fixture based on the included synthetic corpus; not human-reviewed, not locked evaluation, and not a model-generated reference answer."
+  }
+]
