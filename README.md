@@ -1,7 +1,5 @@
 # RAG Evaluation and Deployment API
 
-**A small retrieval API that makes missing evidence and misleading evaluation metrics visible.**
-
 The service indexes 32 authored ML/MLOps notes with pure-Python TF-IDF. It returns ranked passages, constructs short extractive answers with source markers, and abstains when no passage passes its lexical checks. It runs without a model download, GPU, or paid API key.
 
 [Workflow and code map](WORKFLOW.md) · [Development evaluation](outputs/EVALUATION_REPORT.md) · [Per-case failures](outputs/evaluation_failures.json)
@@ -29,6 +27,10 @@ This rejects unrelated queries and some weak matches. It still confuses topical 
 ## Development evaluation
 
 The suite contains **52 cases**: 20 original answerable fixtures, 12 additional answerable cases, 12 overlapping-vocabulary unanswerable cases, and 8 out-of-domain unanswerable cases. All labels are **`pending_human_review`**. These are authored development fixtures; they are not human-reviewed gold labels, production questions, or a locked benchmark.
+
+![Answered and abstained counts: original answerable 19 and 1; additional answerable 12 and 0; overlapping-vocabulary unanswerable 8 and 4; out-of-domain unanswerable 0 and 8. All labels await human review.](docs/figures/development-answer-status.svg)
+
+The eight answers emitted on overlapping-vocabulary unanswerable cases are **false answers under the provisional labels**. Answer emission on answerable cases is **not answer correctness**. The plot reads the checked-in [evaluation snapshot](outputs/evaluation_metrics.json), without rerunning evaluation; [source hashes and figure provenance](docs/figures/development-answer-status.provenance.json) identify the exact evidence.
 
 | Metric | Observed count | Meaning |
 |---|---:|---|
@@ -59,6 +61,17 @@ The metrics response is **schema version 2**. The misleading `citation_coverage`
 
 ## Run locally
 
+Python 3.12 is used by the included CI workflow. On Linux or macOS (Bash):
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements-lock.txt
+python -m uvicorn rag_api.app:app --host 127.0.0.1 --port 8000
+```
+
+On Windows (PowerShell):
+
 ```powershell
 python -m venv .venv
 .venv/Scripts/python.exe -m pip install -r requirements-lock.txt
@@ -67,6 +80,8 @@ python -m venv .venv
 
 API documentation: `http://127.0.0.1:8000/docs`.
 
+With the Bash virtual environment active, use `python -m pytest -q` to run tests and `python scripts/run_evaluation.py` to regenerate evaluation outputs. On Windows:
+
 ```powershell
 .venv/Scripts/python.exe -m pytest -q --junitxml outputs/test_results.xml
 .venv/Scripts/python.exe scripts/run_evaluation.py
@@ -74,9 +89,21 @@ API documentation: `http://127.0.0.1:8000/docs`.
 
 The included corpus and cases are ready to use. `scripts/seed_corpus.py` regenerates the original 32 notes and 20 fixtures; `scripts/build_challenge.py` regenerates the additional 32 cases with their provenance.
 
+### Rebuild the README figure (optional)
+
+Matplotlib is separate from the API dependencies. With a virtual environment active:
+
+```bash
+python -m pip install -r requirements-plot.txt
+python scripts/plot_development_results.py
+python -m unittest discover -s tests -p test_readme_plot.py
+```
+
+The script writes only the SVG, PNG and provenance file in `docs/figures/`. It checks the historical source hash and refuses changed evaluation evidence rather than silently reusing its caption. Source and artifact tests use the standard library; only the rerender test needs optional Matplotlib. Existing CI does not install this optional dependency. Byte-repeatability is checked within the same renderer/font environment, not promised across platforms.
+
 ## Verification and reproducibility
 
-Local verification: **29 tests passed**, including API compatibility, abstention, exact source usage, irrelevant-source-present negatives, missing denominators, invalid labels, and deterministic results. Machine-readable results are in [outputs/test_results.xml](outputs/test_results.xml).
+The committed baseline test record reports **29 tests passed**, including API compatibility, abstention, exact source usage, irrelevant-source-present negatives, missing denominators, invalid labels, and deterministic results. Machine-readable results are in [outputs/test_results.xml](outputs/test_results.xml); the optional figure checks are separate.
 
 The evaluation writes:
 

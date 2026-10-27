@@ -1,0 +1,2 @@
+# Optional README figure only; not needed by the API or its existing CI workflow.
+matplotlib==3.10.8
